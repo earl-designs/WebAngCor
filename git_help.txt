@@ -1,0 +1,5 @@
+
+git branch [Branch_Name]
+
+git fetch
+git checkout [Branch_Name]
