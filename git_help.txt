@@ -1,4 +1,3 @@
-#Git Help
 
 git branch						--> shows all Branches
 git checkout -b [Branch_Name]	--> create and switch to new Branch
