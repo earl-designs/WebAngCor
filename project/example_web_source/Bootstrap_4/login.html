@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="../../favicon.ico">
+
+	<title>Shop Example</title>
+	<link rel="stylesheet" href="css/themes/slate.min.css" id="css-theme"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>  
+<body>
+
+<!-- Navigation Top -->
+	<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+		<a class="navbar-brand" href="#">
+			<img src="img/brand.png" width="30" height="30" alt="" class="rounded-circle">
+			Shop Brand
+		</a>		
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">		
+					<a class="nav-link" href="shop_6.html">Shop</a>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle d-none d-md-block" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="icon fab fa-keycdn"></span></a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/bootstrap.min.css', 1);">Default</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/slate.min.css', 1);">Slate</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/darkly.min.css', 1);">Darkly</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/solar.min.css', 1);">Solar</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/superhero.min.css', 1);">Superhero</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/cyborg.min.css', 1);">Cyborg</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/flatly.min.css', 1);">Flatly</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/cerulean.min.css', 1);">Cerulean</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/litera.min.css', 1);">Litera</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/lux.min.css', 1);">Lux</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/simplex.min.css', 1);">Simplex</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/sketchy.min.css', 1);">Sketchy</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="navbar-nav justify-content-end">
+				<li class="nav-item">		
+					<a href="#" class="nav-link">
+						<i class="fas fa-shopping-cart"></i>
+						<span class="badge badge-pill badge-warning">1</span>
+					</a>
+				</li>
+				<li class="nav-item">		
+					<a href="login.html" class="nav-link">Sign In</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+<!-- Navigation Top -->
+	
+<!-- Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+				<div class="card my-5">
+					<nav>
+						<div class="nav nav-tabs" id="nav-tab" role="tablist">
+							<a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab" aria-controls="nav-login" aria-selected="true">Login</a>
+							<a class="nav-item nav-link" id="nav-signin-tab" data-toggle="tab" href="#nav-signin" role="tab" aria-controls="nav-signin" aria-selected="false">Sign In</a>
+						</div>
+					</nav>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="card-body tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+							<h5 class="card-title text-center">Login</h5>
+							<form>
+								<div class="form-group">
+									<label for="inputEmail">Email address</label>
+									<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+								</div>
+
+								<div class="form-group">
+									<label for="inputPassword">Password</label>
+									<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+								</div>
+
+								<div class="form-check mb-3">
+									<input type="checkbox" class="form-check-input" id="rememberMe">
+									<label class="form-check-label" for="rememberMe">Remember me</label>
+								</div>
+								<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
+								<hr class="my-4">
+							</form>
+						</div>
+						<div class="card-body tab-pane fade" id="nav-signin" role="tabpanel" aria-labelledby="nav-signin-tab">
+							<h5 class="card-title text-center">Sign In</h5>
+							<form>
+								<div class="form-group">
+									<label for="inputEmail">Email address</label>
+									<input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+								</div>
+
+								<div class="form-group">
+									<label for="inputUsername">Username</label>
+									<input type="text" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+								</div>
+								
+								<div class="form-group">
+									<label for="inputPassword">Password</label>
+									<input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+								</div>
+								
+								<div class="form-group">
+									<label for="inputPassword2">Repeat Password</label>
+									<input type="password" id="inputPassword2" class="form-control" placeholder="Password" required>
+								</div>
+								
+								<button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Create Account</button>
+								<hr class="my-4">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- Content -->
+	
+<!-- Footer -->
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <p>Example - &copy; 2017 Earl-Designs</p>
+        </footer>
+    </div>
+<!-- Footer -->
+	
+<!-- Scripts -->
+	<script>
+	function changeCSS(cssFile, cssLinkIndex) {
+		var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+
+		var newlink = document.createElement("link");
+		newlink.setAttribute("rel", "stylesheet");
+		newlink.setAttribute("type", "text/css");
+		newlink.setAttribute("href", cssFile);
+
+		document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+	}
+	</script>
+			
+    <script src="js/jquery.js"></script>
+    <script src="js/popper.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+<!-- Scripts -->
+
+  </body>
+</html>

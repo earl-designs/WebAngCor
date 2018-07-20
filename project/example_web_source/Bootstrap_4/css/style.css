@@ -1,0 +1,78 @@
+body{
+	margin-top:55px;
+}
+.navbar .nav-link {
+	border: none; !important
+}
+.navbar .navbar-brand{
+	border: none; !important	
+}
+
+.card-margin{
+	margin-top:20px;
+}
+.img-div-shop{
+	padding-left:15px;
+	padding-right:15px;
+	margin-top:-20px;
+}
+.img-div-shop img{	
+	border-radius: 5px;	
+	box-shadow: 0 0 8px 3px rgba(150, 150, 150, 0.5);
+}
+.card-shop{	
+	transition: margin-top 0.2s, margin-bottom 0.2s, box-shadow 0.2s;
+	-webkit-transition: all .5s ease;
+}
+.card-shop:hover{
+	margin-top: -0.5rem;
+	margin-bottom: 0.5rem;
+	box-shadow: 0 0 15px 7px rgba(200, 200, 200, 0.5);
+}
+.card-shop:hover img{
+    animation-name: box-shadow-color-cycle;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.overflow-hidden{
+	overflow: hidden;
+}
+.sticky-offset{
+	top:79px;
+}
+.height-200{
+	height:200px;
+}
+
+.icon{
+	font-size:23px;
+}
+.no-decoration:hover{
+	text-decoration: none;
+}
+
+@keyframes box-shadow-color-cycle {	
+    0%    {box-shadow: 0 0 10px 5px rgba(0, 140, 186, 0.5);}
+    40%   {box-shadow: 0 0 10px 5px rgba(140, 186, 0, 0.5);}
+    60%   {box-shadow: 0 0 10px 5px rgba(186, 0, 140, 0.5);}
+    100%  {box-shadow: 0 0 10px 5px rgba(0, 140, 186, 0.5);}
+}
+
+.progress-bar-load{
+    animation: progress-bar-load 2s forwards;
+}
+@keyframes progress-bar-load {	
+	0% 		{width:0%;}
+	100% 	{width:100%;}
+}
+
+.scaling-follower {
+    display: flex;
+    overflow: hidden;
+    background: rgba(256, 256, 256, 0.2);
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none; /* Very important to prevent the follower from messing up with the mouse move */
+}

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="icon" href="../../favicon.ico">
+
+	<title>Shop Example</title>
+	<link rel="stylesheet" href="css/themes/slate.min.css" id="css-theme"/>
+	<link rel="stylesheet" href="css/animate.css"/>
+	<link rel="stylesheet" href="css/style.css"/>
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</head>  
+<body>
+
+<!-- Navigation Top -->
+	<nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+		<a class="navbar-brand" href="#">
+			<img src="img/brand.png" width="30" height="30" alt="" class="rounded-circle">
+			Shop Brand
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop Examples</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown01">
+						<a class="dropdown-item" href="sites/old_shop/shop_1.html">Shop 1</a>
+						<a class="dropdown-item" href="sites/old_shop/shop_2.html">Shop 2</a>
+						<a class="dropdown-item" href="sites/old_shop/shop_3.html">Shop 3</a>
+						<a class="dropdown-item" href="sites/old_shop/shop_4.html">Shop 4</a>
+						<a class="dropdown-item" href="sites/old_shop/shop_5.html">Shop 5</a>
+						<a class="dropdown-item" href="shop_6.html">Shop 6</a>
+					</div>
+				</li>
+			</ul>
+			<ul class="navbar-nav justify-content-end">
+				<li class="nav-item dropdown">
+					<a class="nav-link" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<i class="icon fab fa-keycdn"></i>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/bootstrap.min.css', 1);">Default</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/slate.min.css', 1);">Slate</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/darkly.min.css', 1);">Darkly</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/solar.min.css', 1);">Solar</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/superhero.min.css', 1);">Superhero</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/cyborg.min.css', 1);">Cyborg</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/flatly.min.css', 1);">Flatly</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/cerulean.min.css', 1);">Cerulean</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/litera.min.css', 1);">Litera</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/lux.min.css', 1);">Lux</a>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/simplex.min.css', 1);">Simplex</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#" onclick="changeCSS('css/themes/sketchy.min.css', 1);">Sketchy</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+<!-- Navigation Top -->
+
+
+<!-- Alert's -->
+
+	<div class ="container">
+		<div class="alert alert-success alert-dismissible fade show" role="alert">
+			--> <a href="http://jsfiddle.net/losmescaleros/xfopaebv/" class="alert-link">Alert over content</a> <--
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	</div>
+
+<!-- Alert's -->
+
+<!-- Content -->
+	<div class="container">
+		<div class="row">
+			<div class="col-12 my-4">
+			
+<!-- Add Form -->
+				<form class="">
+					<div class="form-group row">
+						<label for="inputName" class="col-2 col-form-label">Name</label>
+						<div class="col-10">
+							<input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Enter Name">
+							<small id="nameHelp" class="form-text text-muted">Name which will be is displayed</small>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputName" class="col-2 col-form-label">Price</label>
+						<div class="col-10">
+							<input type="Number" class="form-control w-50" id="inputName" aria-describedby="nameHelp" placeholder="5.00">
+							<small id="nameHelp" class="form-text text-muted">Price for your Item</small>
+						</div>
+					</div>
+						
+					<div class="form-group row">					
+						<div class="offset-2 col-10 ">
+							<div class="custom-file">
+								<input type="file" class="custom-file-input" id="customFile">
+								<label class="custom-file-label" for="customFile">Choose file</label>
+							</div>
+						</div>
+					</div>
+					
+<!-- Preview Image selection -->
+					<div class="form-group row">
+						<div class="offset-2 col-10">
+							<img class="img-fluid rounded scaling-box" src="img\1280x720\Abstract_Field.jpg" alt="" onclick="selectScalingBox()"/>
+							<div class="scaling-follower rounded">
+							</div>
+						</div>
+					</div>				
+<!-- Preview Image selection -->
+					
+					<div class="form-group row">
+						<div class="offset-2 col-10">
+							<button id="successButton" type="button" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="Save with Publish">
+								<i class="icon fas fa-save"></i>
+							</button>
+							<button id="infoButton" type="button" class="btn btn-info mx-2" data-toggle="tooltip" data-placement="bottom" title="Save without Publish">
+								<i class="icon far fa-save"></i>
+							</button>
+							<button id="dangerButton" type="reset" class="btn btn-danger" data-toggle="tooltip" data-placement="bottom" title="Reset inputs">
+								<i class="icon fas fa-redo-alt"></i>
+							</button>
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="offset-2 col-10">
+							<div class="progress">
+								<div id="success-progress-bar" class="progress-bar bg-success" style="width:0%"></div>
+								<div id="info-progress-bar" class="progress-bar bg-info" style="width:0%"></div>
+								<div id="danger-progress-bar" class="progress-bar bg-danger" style="width:0%"></div>
+							</div> 
+						</div>
+					</div>
+					
+				</form>				
+<!-- Add Form -->
+				
+			</div>
+		</div>
+	</div>	
+<!-- Content -->
+	
+<!-- Footer -->
+    <div class="container body-content">
+        <hr />
+        <footer>
+            <p>Example - &copy; 2017 Earl-Designs</p>
+        </footer>
+    </div>
+<!-- Footer -->
+	
+<!-- Scripts -->			
+    <script src="js/popper.js"></script>
+    <script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scaling-box-script.js"></script>
+	
+	<script>
+		function changeCSS(cssFile, cssLinkIndex) {
+			var oldlink = document.getElementsByTagName("link").item(cssLinkIndex);
+
+			var newlink = document.createElement("link");
+			newlink.setAttribute("rel", "stylesheet");
+			newlink.setAttribute("type", "text/css");
+			newlink.setAttribute("href", cssFile);
+
+			document.getElementsByTagName("head").item(0).replaceChild(newlink, oldlink);
+		}
+	</script>
+	
+	<script>
+		$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+	</script>
+		
+	<script>
+		$("#successButton").click(function() {$('#success-progress-bar').addClass('progress-bar-load');});
+		$("#infoButton").click(function() {$('#info-progress-bar').addClass('progress-bar-load');});
+		$("#dangerButton").click(function() {$('#danger-progress-bar').addClass('progress-bar-load');});
+	</script>
+<!-- Scripts -->
+
+  </body>
+</html>
