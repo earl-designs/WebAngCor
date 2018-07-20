@@ -4,6 +4,7 @@
 
 # visual Studio results
 .vs
+.vscode
 
 # Build results
 .bin
