@@ -1,27 +1,5 @@
-﻿################################################################################
-# gitignore 
-################################################################################
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# visual Studio results
-.vs
-.vscode
-
-# Build results
-.bin
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-bin/
-Bin/
-obj/
-Obj/
-
-# Angular results
 # compiled output
 /dist
 /dist-server
@@ -64,4 +42,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
