@@ -1,27 +1,3 @@
-﻿################################################################################
-# gitignore 
-################################################################################
-
-# visual Studio results
-.vs
-.vscode
-
-# Build results
-.bin
-[Dd]ebug/
-[Dd]ebugPublic/
-[Rr]elease/
-[Rr]eleases/
-x64/
-x86/
-build/
-bld/
-bin/
-Bin/
-obj/
-Obj/
-
-# Angular results
 # compiled output
 /dist
 /dist-server
@@ -29,7 +5,7 @@ Obj/
 /out-tsc
 
 # dependencies
-.node_modules
+/node_modules
 
 # IDEs and editors
 /.idea
@@ -64,4 +40,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
