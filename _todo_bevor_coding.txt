@@ -4,3 +4,5 @@
 - install Demo.SPA 
 - copy node_modules into Shop.SPA
 - install VS Code Extensions
+- install bootstrap (npm install bootstrap)
+- install font-awesome (npm install font-awesome)
