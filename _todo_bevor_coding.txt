@@ -1,0 +1,6 @@
+- install Programms (VS Code, git, TortoiseGit, sqlite DB Browser, Postman)
+- install node.js
+- install angular Cli (npm install -g@angular/cli@1.7.3)
+- install Demo.SPA 
+- copy node_modules into Shop.SPA
+- install VS Code Extensions
