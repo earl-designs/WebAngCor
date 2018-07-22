@@ -1,14 +1,14 @@
 <div class="card my-5">
   <nav>
     <div class="nav nav-tabs" id="nav-tab" role="tablist">
-      <a class="nav-item nav-link" (click)="showLogin()">Login</a>
-      <a class="nav-item nav-link" (click)="showRegister()">Register</a>
+      <a class="nav-item nav-link" [ngClass]="{'active': loginShow}" (click)="showLogin()">Login</a>
+      <a class="nav-item nav-link" [ngClass]="{'active': registerShow}" (click)="showRegister()">Register</a>
     </div>
   </nav>
   <div class="tab-content" id="nav-tabContent">
     
-    <app-login *ngIf="loginShow"></app-login>
     <app-register *ngIf="registerShow" (cancelRegister)="cancelRegisterMode($event)"></app-register>
+    <app-login *ngIf="loginShow"></app-login>
     
   </div>
 </div>

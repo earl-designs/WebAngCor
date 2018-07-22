@@ -45,15 +45,9 @@
 
 
 
-    <form *ngIf="!loggedIn()" #loginForm="ngForm" class="form-inline mt-2 mt-md-0" (ngSubmit)="login()">
-      <div class="form-group">
-          <input class="form-control form-control-sm mr-sm-2" type="text" placeholder="Username" [(ngModel)]="model.username" required name="username">
-      </div>
-      <div class="form-group">
-          <input class="form-control form-control-sm mr-sm-2" type="password" placeholder="Password" [(ngModel)]="model.password" required name="password">
-      </div>
-      <button class="btn btn-outline-success" type="submit" [(disabled)]="!loginForm.valid">Sign in</button>
-    </form>
+    <div *ngIf="!loggedIn()" class="navbar-nav justify-content-end">
+      <button class="btn btn-outline-success">Sign in</button>
+    </div>
 
     <!-- navbar Right -->
     <ul *ngIf="loggedIn()" class="navbar-nav justify-content-end">

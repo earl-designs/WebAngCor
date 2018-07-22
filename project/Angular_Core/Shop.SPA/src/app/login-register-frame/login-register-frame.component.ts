@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-login-register-frame',
@@ -13,7 +14,7 @@ export class LoginRegisterFrameComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.registerShow = true;
+    this.loginShow = true;
   }
 
   showLogin() {
