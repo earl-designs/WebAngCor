@@ -8,8 +8,10 @@ import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
 import { NavTopComponent } from './nav-top/nav-top.component';
 import { AuthService } from './_services/auth.service';
-import { SignInUpComponent } from './sign-in-up/sign-in-up.component';
 import { HomeComponent } from './home/home.component';
+import { LoginRegisterFrameComponent } from './login-register-frame/login-register-frame.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -17,8 +19,10 @@ import { HomeComponent } from './home/home.component';
       AppComponent,
       ValueComponent,
       NavTopComponent,
-      SignInUpComponent,
-      HomeComponent
+      HomeComponent,
+      LoginRegisterFrameComponent,
+      RegisterComponent,
+      LoginComponent
    ],
    imports: [
       BrowserModule,
