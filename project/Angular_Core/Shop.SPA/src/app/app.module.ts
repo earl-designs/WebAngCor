@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginRegisterFrameComponent } from './login-register-frame/login-register-frame.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { LoginComponent } from './login/login.component';
       FormsModule
    ],
    providers: [
-      AuthService
+      AuthService,
+      ErrorInterceptorProvider
    ],
    bootstrap: [
       AppComponent
