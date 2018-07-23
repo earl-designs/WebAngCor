@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -9,6 +10,9 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginRegisterFrameComponent } from './login-register-frame/login-register-frame.component';
+
+import { AuthService } from './_services/auth.service';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 @NgModule({
    declarations: [
@@ -22,9 +26,13 @@ import { LoginRegisterFrameComponent } from './login-register-frame/login-regist
    ],
    imports: [
         HttpClientModule,
-        BrowserModule
+        BrowserModule,
+        FormsModule
    ],
-   providers: [],
+   providers: [
+        AuthService,
+        ErrorInterceptorProvider
+    ],
    bootstrap: [
       AppComponent
    ]

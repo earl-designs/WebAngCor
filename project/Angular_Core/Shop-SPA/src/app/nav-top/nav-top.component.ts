@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   selector: 'app-nav-top',
@@ -8,13 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class NavTopComponent implements OnInit {
   model: any = {};
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
 
+  logout() {
+    this.authService.logout();
+  }
+
   loggedIn() {
-    return false;
+    return this.authService.loggedIn();
   }
 
 }

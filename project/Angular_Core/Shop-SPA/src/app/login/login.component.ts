@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   }
 
   loggedIn() {
-    return false;
+    return this.authService.loggedIn();
   }
 
 }
