@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { ValueComponent } from './value/value.component';
 import { NavTopComponent } from './nav-top/nav-top.component';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
@@ -17,7 +16,6 @@ import { LoginComponent } from './login/login.component';
 @NgModule({
    declarations: [
       AppComponent,
-      ValueComponent,
       NavTopComponent,
       HomeComponent,
       LoginRegisterFrameComponent,
