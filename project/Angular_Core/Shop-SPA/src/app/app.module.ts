@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginRegisterFrameComponent } from './login-register-frame/login-register-frame.component';
 
 import { AuthService } from './_services/auth.service';
+import { AlertifyService } from './_services/alertify.service';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
    ],
    providers: [
         AuthService,
+        AlertifyService,
         ErrorInterceptorProvider
     ],
    bootstrap: [

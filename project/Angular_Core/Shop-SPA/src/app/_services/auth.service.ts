@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { AlertifyService } from './alertify.service';
 
 @Injectable({
     providedIn: 'root'
@@ -9,7 +10,7 @@ export class AuthService {
     baseUrl = 'http://localhost:5000/api/auth/';
     userToken: any;
 
-    constructor(private http: HttpClient) {}
+    constructor(private http: HttpClient, private alertify: AlertifyService) {}
 
     login(model: any) {
         return this.http
@@ -36,6 +37,6 @@ export class AuthService {
     logout() {
       this.userToken = null;
       localStorage.removeItem('token');
-      console.log('logged out');
+      this.alertify.message('logged out');
     }
 }
