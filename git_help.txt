@@ -1,5 +1,6 @@
 
-git branch						--> shows all Branches
+git branch						--> shows Branches
+git show-branch					--> shows all Branches
 git checkout -b [Branch_Name]	--> create and switch to new Branch
 git checkout [Branch_Name]		--> switch to Branch
 
@@ -10,3 +11,5 @@ git fetch [Branch_Name]			--> update Branch if repo changed
 git branch -d [Branch_Name]		--> delete local Branch
 git branch -D [Branch_Name]		--> force delete local Branch
 git push origin :[Branch_Name]	--> delete brunch on github
+
+git reset HEAD~					--> uncommit last commit
