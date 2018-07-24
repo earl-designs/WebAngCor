@@ -15,7 +15,7 @@ namespace Shop.API.Data
         }
         public async Task<User> Login(string username, string password)
         {
-            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username.ToLower());
+            var user = await _context.User.FirstOrDefaultAsync(x => x.Username == username.ToLower());
 
             if(user == null){
                 return null; 
@@ -66,7 +66,7 @@ namespace Shop.API.Data
 
         public async Task<bool> UserExists(string username)
         {
-            if(await _context.Users.AnyAsync(x => x.Username == username.ToLower())){
+            if(await _context.User.AnyAsync(x => x.Username == username.ToLower())){
                 return true;
             }
             return false;
