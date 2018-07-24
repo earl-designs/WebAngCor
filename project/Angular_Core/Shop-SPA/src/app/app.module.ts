@@ -3,6 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
+import { BsDropdownModule } from 'ngx-bootstrap';
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavTopComponent } from './nav-top/nav-top.component';
@@ -28,7 +30,8 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
    imports: [
         HttpClientModule,
         BrowserModule,
-        FormsModule
+        FormsModule,
+        BsDropdownModule.forRoot()
    ],
    providers: [
         AuthService,
