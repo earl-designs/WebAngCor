@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { AlertifyService } from './alertify.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
+import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
@@ -13,7 +14,9 @@ export class AuthService {
     jwtHelper = new JwtHelperService();
     decodedToken: any;
 
-    constructor(private http: HttpClient, private alertify: AlertifyService) {}
+    constructor(private http: HttpClient,
+                private alertify: AlertifyService,
+                private router: Router) {}
 
     login(model: any) {
         return this.http
@@ -43,5 +46,6 @@ export class AuthService {
       this.userToken = null;
       localStorage.removeItem('token');
       this.alertify.message('logged out');
+      this.router.navigate(['/home']);
     }
 }

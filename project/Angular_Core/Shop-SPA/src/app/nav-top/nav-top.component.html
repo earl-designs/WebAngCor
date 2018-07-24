@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top ">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" [routerLink]="['/home']">
       <img src="" width="30" height="30" alt="" class="rounded-circle">
       Shop Brand
     </a>
@@ -9,8 +9,8 @@
     <ul class="navbar-nav mr-auto">
 
         <!-- Wishlist Link -->
-        <li *ngIf="loggedIn()" class="nav-item">
-          <a class="nav-link" href="#">
+        <li *ngIf="loggedIn()" class="nav-item"  routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/wishlist']">
             <i class="icon fa fa-heart">
                 <span class="badge badge-pill badge-success">2</span>
             </i>
@@ -19,8 +19,8 @@
         <!-- Wishlist Link --> 
 
       <!-- Shopping Cart Link -->
-      <li class="nav-item">
-        <a class="nav-link" href="#">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/shoppingCart']">
           <i class="icon fa fa-shopping-cart">
             <span class="badge badge-pill badge-warning">5</span>
           </i>
@@ -29,8 +29,8 @@
       <!-- Shopping Cart Link -->
 
       <!-- Add new Link -->
-      <li *ngIf="loggedIn()" class="nav-item">
-        <a class="nav-link" href="#">
+      <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/addNew']">
           <i class="icon fa fa-plus"></i>
         </a>
       </li>
@@ -50,7 +50,9 @@
       </a>
     
       <div class="dropdown-menu" *dropdownMenu >
-        <a class="dropdown-item" href="#"><i class="fa fa-user"></i> Edit Profile</a>
+        <a class="dropdown-item" [routerLink]="['/editProfile']">
+          <i class="fa fa-user"></i> Edit Profile
+        </a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i> Logout</a>
       </div>
