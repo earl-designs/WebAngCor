@@ -1,57 +1,47 @@
 [
   {
-    "Username": "Flores",
-    "Email": "isabellarojas@capscreen.com",
+    "Username": "Alford",
+    "Email": "bettieingram@spherix.com",
     "Password": "password",
-    "CreateDate": "2017-07-01",
-    "PreName": "Flores",
-    "LastName": "Flores",
-    "ProfilPic": {
-      "Path": "https://randomuser.me/api/portraits/men/99.jpg"
-    }
+    "CreateDate": "2017-05-22",
+    "PreName": "Alford",
+    "LastName": "Alford",
+    "PicturePath": "https://randomuser.me/api/portraits/men/43.jpg"
   },
   {
-    "Username": "Summers",
-    "Email": "dianemccarthy@techtrix.com",
+    "Username": "Holden",
+    "Email": "barnettrodriquez@webiotic.com",
     "Password": "password",
-    "CreateDate": "2017-08-02",
-    "PreName": "Summers",
-    "LastName": "Summers",
-    "ProfilPic": {
-      "Path": "https://randomuser.me/api/portraits/men/14.jpg"
-    }
+    "CreateDate": "2017-01-24",
+    "PreName": "Holden",
+    "LastName": "Holden",
+    "PicturePath": "https://randomuser.me/api/portraits/men/20.jpg"
   },
   {
-    "Username": "Yang",
-    "Email": "beachbradford@vortexaco.com",
+    "Username": "Smith",
+    "Email": "castanedadawson@koffee.com",
     "Password": "password",
-    "CreateDate": "2017-02-27",
-    "PreName": "Yang",
-    "LastName": "Yang",
-    "ProfilPic": {
-      "Path": "https://randomuser.me/api/portraits/men/68.jpg"
-    }
+    "CreateDate": "2017-01-07",
+    "PreName": "Smith",
+    "LastName": "Smith",
+    "PicturePath": "https://randomuser.me/api/portraits/men/99.jpg"
   },
   {
-    "Username": "Faulkner",
-    "Email": "juliaferguson@securia.com",
+    "Username": "Shelton",
+    "Email": "barbarabrennan@mazuda.com",
     "Password": "password",
-    "CreateDate": "2017-01-14",
-    "PreName": "Faulkner",
-    "LastName": "Faulkner",
-    "ProfilPic": {
-      "Path": "https://randomuser.me/api/portraits/men/88.jpg"
-    }
+    "CreateDate": "2017-08-22",
+    "PreName": "Shelton",
+    "LastName": "Shelton",
+    "PicturePath": "https://randomuser.me/api/portraits/men/9.jpg"
   },
   {
-    "Username": "Baldwin",
-    "Email": "chasepadilla@bunga.com",
+    "Username": "Riddle",
+    "Email": "mcdanielayers@zidox.com",
     "Password": "password",
-    "CreateDate": "2017-08-20",
-    "PreName": "Baldwin",
-    "LastName": "Baldwin",
-    "ProfilPic": {
-      "Path": "https://randomuser.me/api/portraits/men/31.jpg"
-    }
+    "CreateDate": "2017-07-09",
+    "PreName": "Riddle",
+    "LastName": "Riddle",
+    "PicturePath": "https://randomuser.me/api/portraits/men/82.jpg"
   }
 ]

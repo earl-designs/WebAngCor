@@ -9,6 +9,7 @@ namespace Shop.API.Data
          Task<bool> SaveAll();
          Task<IEnumerable<User>> GetUsers();
          Task<User> GetUser(int id);
-
+        Task<IEnumerable<ShopItem>> GetWishlist(int id);
+        Task<IEnumerable<ShopItem>> GetBoughtItems(int id);
     }
 }

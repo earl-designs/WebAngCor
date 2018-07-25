@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using AutoMapper;
 using Shop.API.Dtos;
 using Shop.API.Models;
@@ -15,12 +17,27 @@ namespace Shop.API.Helpers
                 .ForMember(dest => dest.BoughtItemscount, opt => {
                     opt.MapFrom(src => src.BoughtItems.Count);
                 });
-            CreateMap<ShopItem, ShopItemDto>();
-            CreateMap<ShopItem, ShopItemforListDto>();
-            CreateMap<Category, CategoryDto>();
+                
+            CreateMap<ShopItem, ShopItemDto>()
+                .ForMember(dest => dest.ExampleImages, opt => {
+                    opt.MapFrom(src => src.ExampleImages.Select(s => s.Path));
+                })
+                .ForMember(dest => dest.Categorys, opt => {
+                    opt.MapFrom(src => src.Categorys.Select(s => s.Category.Name));
+                });
 
-            CreateMap<Wishlist, ShopItemforListDto>();
-            CreateMap<BoughtItem, ShopItemforListDto>();
+            CreateMap<ShopItem, ShopItemforListDto>()
+                .ForMember(dest => dest.ExampleImage, opt => {
+                    opt.MapFrom(src => src.ExampleImages.FirstOrDefault(p => p.Main == true).Path);
+                });
+            
+            CreateMap<ShopItem, ShopItemForEditDto>();
+
+            CreateMap<Category, CategoryDto>();
+            CreateMap<ShopItemImage, ShopItemImageDto>();
+
+            CreateMap<Wishlist, ICollection<ShopItemforListDto>>();
+            CreateMap<BoughtItem, ICollection<ShopItemforListDto>>();
 
         }
     }

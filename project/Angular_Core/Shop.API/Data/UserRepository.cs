@@ -26,8 +26,7 @@ namespace Shop.API.Data
 
         public async Task<User> GetUser(int id)
         {
-            var user = await _context.User.Include(p => p.ProfilPic)
-                                          .Include(p => p.BoughtItems)
+            var user = await _context.User.Include(p => p.BoughtItems)
                                           .Include(p => p.Wishlist)
                                           .FirstOrDefaultAsync(u => u.Id == id);
             return user;
@@ -35,11 +34,30 @@ namespace Shop.API.Data
 
         public async Task<IEnumerable<User>> GetUsers()
         {
-            var users = await _context.User.Include(p => p.ProfilPic)
-                                           .Include(p => p.BoughtItems)
+            var users = await _context.User.Include(p => p.BoughtItems)
                                            .Include(p => p.Wishlist)
                                            .ToListAsync();
             return users;
+        }
+
+        public async Task<IEnumerable<ShopItem>> GetBoughtItems(int id)
+        {
+            var shopItems = await _context.Wishlist.Where(w => w.UserId == id)
+                                                   .Select(s => s.ShopItem)
+                                                   .Include(p => p.Categorys).ThenInclude(x => x.Category)
+                                                   .Include(p => p.ExampleImages)
+                                                   .ToArrayAsync();
+            return shopItems;
+        }
+
+        public async Task<IEnumerable<ShopItem>> GetWishlist(int id)
+        {
+            var shopItems = await _context.BoughtItem.Where(w => w.UserId == id)
+                                                     .Select(s => s.ShopItem)
+                                                     .Include(p => p.Categorys).ThenInclude(x => x.Category)
+                                                     .Include(p => p.ExampleImages)
+                                                     .ToArrayAsync();
+            return shopItems;
         }
 
         public async Task<bool> SaveAll()

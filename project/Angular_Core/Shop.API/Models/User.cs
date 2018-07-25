@@ -15,7 +15,7 @@ namespace Shop.API.Models
         public string PreName { get; set; }
         public string LastName { get; set; }
 
-        public ProfilPic ProfilPic { get; set; }
+        public string PicturePath { get; set; }
         public virtual ICollection<Wishlist> Wishlist { get; set; }
         public virtual ICollection<BoughtItem> BoughtItems { get; set; }
     }

@@ -11,7 +11,7 @@ using System;
 namespace Shop.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20180724120653_addShopItemFrame")]
+    [Migration("20180725101638_addShopItemFrame")]
     partial class addShopItemFrame
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -48,23 +48,6 @@ namespace Shop.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Category");
-                });
-
-            modelBuilder.Entity("Shop.API.Models.ProfilPic", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Path");
-
-                    b.Property<int>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("ProfilPic");
                 });
 
             modelBuilder.Entity("Shop.API.Models.ShopItem", b =>
@@ -140,6 +123,8 @@ namespace Shop.API.Migrations
 
                     b.Property<byte[]>("PasswordSalt");
 
+                    b.Property<string>("PicturePath");
+
                     b.Property<string>("PreName");
 
                     b.Property<string>("Username");
@@ -189,14 +174,6 @@ namespace Shop.API.Migrations
                     b.HasOne("Shop.API.Models.User", "User")
                         .WithMany("BoughtItems")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Shop.API.Models.ProfilPic", b =>
-                {
-                    b.HasOne("Shop.API.Models.User", "User")
-                        .WithOne("ProfilPic")
-                        .HasForeignKey("Shop.API.Models.ProfilPic", "UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -39,5 +39,25 @@ namespace Shop.API.Controllers
 
             return Ok(userToReturn);
         }
+
+        [HttpGet("wish/{id}")]
+        public async Task<IActionResult> getWishlist(int id)
+        {
+            var shopItems = await _repo.GetWishlist(id);
+
+            var shopItemsToReturn = _mapper.Map<IEnumerable<ShopItemforListDto>>(shopItems);
+
+            return Ok(shopItemsToReturn);
+        }
+
+        [HttpGet("bought/{id}")]
+        public async Task<IActionResult> getBoughtist(int id)
+        {
+            var shopItems = await _repo.GetBoughtItems(id);
+
+            var shopItemsToReturn = _mapper.Map<IEnumerable<ShopItemforListDto>>(shopItems);
+
+            return Ok(shopItemsToReturn);
+        }
     }
 }

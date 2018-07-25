@@ -43,10 +43,6 @@
     PreName: function(){ return this.Username; },
     LastName: function(){ return this.Username; },
     
-    ProfilPic: {
-      Path: function(num) {
-        return 'https://randomuser.me/api/portraits/men/' + num.integer(1,99) + '.jpg';
-      }
-    }
+    PicturePath: function(num) {return 'https://randomuser.me/api/portraits/men/' + num.integer(1,99) + '.jpg';}
   }
 ]

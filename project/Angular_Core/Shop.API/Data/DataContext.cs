@@ -11,7 +11,6 @@ namespace Shop.API.Data
 
         // User Tables
         public DbSet<User> User { get; set; }
-        public DbSet<ProfilPic> ProfilPic { get; set; }
 
         // User - ShopItem Tables
         public DbSet<Wishlist> Wishlist { get; set; }

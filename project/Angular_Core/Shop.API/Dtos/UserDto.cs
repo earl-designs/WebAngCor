@@ -13,7 +13,7 @@ namespace Shop.API.Dtos
         public string PreName { get; set; }
         public string LastName { get; set; }
 
-        public string ProfilPicPath { get; set; }
+        public string PicturePath { get; set; }
         public int WishlistCount { get; set; }
         public int BoughtItemscount { get; set; }
     }

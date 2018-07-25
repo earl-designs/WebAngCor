@@ -49,6 +49,7 @@ namespace Shop.API.Migrations
                     LastName = table.Column<string>(nullable: true),
                     PasswordHash = table.Column<byte[]>(nullable: true),
                     PasswordSalt = table.Column<byte[]>(nullable: true),
+                    PicturePath = table.Column<string>(nullable: true),
                     PreName = table.Column<string>(nullable: true),
                     Username = table.Column<string>(nullable: true)
                 },
@@ -132,26 +133,6 @@ namespace Shop.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProfilPic",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Path = table.Column<string>(nullable: true),
-                    UserId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProfilPic", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProfilPic_User_UserId",
-                        column: x => x.UserId,
-                        principalTable: "User",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Wishlist",
                 columns: table => new
                 {
@@ -188,12 +169,6 @@ namespace Shop.API.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProfilPic_UserId",
-                table: "ProfilPic",
-                column: "UserId",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ShopItemCategory_CategoryId",
                 table: "ShopItemCategory",
                 column: "CategoryId");
@@ -223,9 +198,6 @@ namespace Shop.API.Migrations
         {
             migrationBuilder.DropTable(
                 name: "BoughtItem");
-
-            migrationBuilder.DropTable(
-                name: "ProfilPic");
 
             migrationBuilder.DropTable(
                 name: "ShopItemCategory");

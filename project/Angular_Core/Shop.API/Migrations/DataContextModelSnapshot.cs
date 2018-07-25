@@ -49,23 +49,6 @@ namespace Shop.API.Migrations
                     b.ToTable("Category");
                 });
 
-            modelBuilder.Entity("Shop.API.Models.ProfilPic", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Path");
-
-                    b.Property<int>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId")
-                        .IsUnique();
-
-                    b.ToTable("ProfilPic");
-                });
-
             modelBuilder.Entity("Shop.API.Models.ShopItem", b =>
                 {
                     b.Property<int>("Id")
@@ -139,6 +122,8 @@ namespace Shop.API.Migrations
 
                     b.Property<byte[]>("PasswordSalt");
 
+                    b.Property<string>("PicturePath");
+
                     b.Property<string>("PreName");
 
                     b.Property<string>("Username");
@@ -188,14 +173,6 @@ namespace Shop.API.Migrations
                     b.HasOne("Shop.API.Models.User", "User")
                         .WithMany("BoughtItems")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Shop.API.Models.ProfilPic", b =>
-                {
-                    b.HasOne("Shop.API.Models.User", "User")
-                        .WithOne("ProfilPic")
-                        .HasForeignKey("Shop.API.Models.ProfilPic", "UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
