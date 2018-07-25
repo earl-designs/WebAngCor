@@ -45,7 +45,7 @@ namespace Shop.API
             services.AddTransient<Seed>(); // TODO: MMA für Seeding --> Entfernen
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IShopItemRepository, ShopItemRepository>();
+            services.AddScoped<IShopRepository, ShopRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>{
                     options.TokenValidationParameters = new TokenValidationParameters

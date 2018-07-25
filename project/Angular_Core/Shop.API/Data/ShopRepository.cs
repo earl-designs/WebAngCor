@@ -6,10 +6,10 @@ using Shop.API.Models;
 
 namespace Shop.API.Data
 {
-    public class ShopItemRepository : IShopItemRepository
+    public class ShopRepository : IShopRepository
     {
         private readonly DataContext _context;
-        public ShopItemRepository(DataContext context)
+        public ShopRepository(DataContext context)
         {
             _context = context;
         }
@@ -43,6 +43,14 @@ namespace Shop.API.Data
 
             return shopItems;
         }
+        
+        public async Task<IEnumerable<Category>> GetCategorys()
+        {
+            var categorys = await _context.Category.ToListAsync();
+
+            return categorys;
+        }
+
 
         public async Task<bool> SaveAll()
         {

@@ -11,17 +11,17 @@ namespace Shop.API.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
-    public class ShopItemController : ControllerBase
+    public class ShopController : ControllerBase
     {
-        private readonly IShopItemRepository _repo;
+        private readonly IShopRepository _repo;
         private readonly IMapper _mapper;
-        public ShopItemController(IShopItemRepository repo, IMapper mapper)
+        public ShopController(IShopRepository repo, IMapper mapper)
         {
             _mapper = mapper;
             _repo = repo;
         }
 
-        [HttpGet]
+        [HttpGet("items")]
         public async Task<IActionResult> GetShopItems()
         {
             var shopItems = await _repo.GetShopItem();
@@ -31,7 +31,7 @@ namespace Shop.API.Controllers
             return Ok(shopItemsToReturn);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("item/{id}")]
         public async Task<IActionResult> getShopItem(int id)
         {
             var shopItem = await _repo.GetShopItem(id);
@@ -39,6 +39,16 @@ namespace Shop.API.Controllers
             var shopItemToReturn = _mapper.Map<ShopItemDto>(shopItem);
 
             return Ok(shopItemToReturn);
+        }
+
+        [HttpGet("categorys")]
+        public async Task<IActionResult> getCategorys(int id)
+        {
+            var categorys = await _repo.GetCategorys();
+
+            var categorysToReturn = _mapper.Map<IEnumerable<CategoryDto>>(categorys);
+
+            return Ok(categorysToReturn);
         }
     }
 }

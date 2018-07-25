@@ -37,7 +37,7 @@ namespace Shop.API.Data
                 shopItem.ExampleImages = new ShopItemImage[]{
                     new ShopItemImage{
                         Name = "Image Name " + i,
-                        Path = "Database/img/SeedImg/" + i + ".jpg",
+                        Path = "assets/img/SeedImg/" + i + ".jpg",
                         Main = true
                     }
                 };

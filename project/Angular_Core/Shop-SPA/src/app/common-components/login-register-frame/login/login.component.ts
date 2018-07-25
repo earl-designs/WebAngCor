@@ -1,6 +1,6 @@
 import { Component, OnInit, Output } from '@angular/core';
-import { AuthService } from '../_services/auth.service';
-import { AlertifyService } from '../_services/alertify.service';
+import { AuthService } from '../../../_services/auth.service';
+import { AlertifyService } from '../../../_services/alertify.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     }, error => {
       this.alertify.error(error);
     }, () => {
-      this.router.navigate(['/wishlist']);
+      this.router.navigate(['/shop']);
     });
   }
 

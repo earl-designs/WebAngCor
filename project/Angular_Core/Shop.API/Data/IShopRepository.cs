@@ -4,10 +4,12 @@ using Shop.API.Models;
 
 namespace Shop.API.Data
 {
-    public interface IShopItemRepository : IGenericRepository
+    public interface IShopRepository : IGenericRepository
     {
         Task<bool> SaveAll();
         Task<IEnumerable<ShopItem>> GetShopItem();
         Task<ShopItem> GetShopItem(int id);
+
+        Task<IEnumerable<Category>> GetCategorys();
     }
 }

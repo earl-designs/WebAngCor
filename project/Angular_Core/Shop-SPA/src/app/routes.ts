@@ -5,9 +5,12 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { AddNewComponent } from './add-new/add-new.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { AuthGuard } from './_guards/auth.guard';
+import { BoughtlistComponent } from './boughtlist/boughtlist.component';
+import { ShopHomeComponent } from './shop/shop-home/shop-home.component';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
+    {path: 'shop', component: ShopHomeComponent},
     {path: 'shoppingCart', component: ShoppingCartComponent},
     {
         path: '',
@@ -15,6 +18,7 @@ export const appRoutes: Routes = [
         canActivate : [AuthGuard],
         children: [
             {path: 'wishlist', component: WishlistComponent},
+            {path: 'boughtlist', component: BoughtlistComponent},
             {path: 'editProfile', component: EditProfileComponent},
             {path: 'addNew', component: AddNewComponent},
         ]

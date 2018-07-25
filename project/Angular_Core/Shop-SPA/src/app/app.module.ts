@@ -8,11 +8,11 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { NavTopComponent } from './nav-top/nav-top.component';
-import { FooterComponent } from './footer/footer.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginRegisterFrameComponent } from './login-register-frame/login-register-frame.component';
+import { NavTopComponent } from './common-components/nav-top/nav-top.component';
+import { FooterComponent } from './common-components/footer/footer.component';
+import { LoginComponent } from './common-components/login-register-frame/login/login.component';
+import { RegisterComponent } from './common-components/login-register-frame/register/register.component';
+import { LoginRegisterFrameComponent } from './common-components/login-register-frame/login-register-frame.component';
 import { AddNewComponent } from './add-new/add-new.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
@@ -24,6 +24,12 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
 import { AuthGuard } from './_guards/auth.guard';
 
 import { appRoutes } from './routes';
+import { BoughtlistComponent } from './boughtlist/boughtlist.component';
+import { UserService } from './_services/user.service';
+import { ShopItemService } from './_services/shopItem.service';
+import { ShopHomeComponent } from './shop/shop-home/shop-home.component';
+import { ShopItemCardComponent } from './shop/shop-item-card/shop-item-card.component';
+import { ShopCategoryComponent } from './shop/shop-category/shop-category.component';
 
 @NgModule({
    declarations: [
@@ -37,7 +43,11 @@ import { appRoutes } from './routes';
       AddNewComponent,
       ShoppingCartComponent,
       WishlistComponent,
-      EditProfileComponent
+      EditProfileComponent,
+      BoughtlistComponent,
+      ShopHomeComponent,
+      ShopItemCardComponent,
+      ShopCategoryComponent
    ],
    imports: [
       HttpClientModule,
@@ -48,6 +58,8 @@ import { appRoutes } from './routes';
    ],
    providers: [
         AuthService,
+        UserService,
+        ShopItemService,
         AlertifyService,
         ErrorInterceptorProvider,
         AuthGuard

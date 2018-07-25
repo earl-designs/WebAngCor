@@ -8,6 +8,14 @@
       <!-- navbar Left -->
     <ul class="navbar-nav mr-auto">
 
+        <!-- Shop Link -->
+        <li class="nav-item"  routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/shop']">
+            <i class="icon fa fa-shopping-basket"></i>
+          </a>
+        </li>
+        <!-- Shop Link --> 
+
         <!-- Wishlist Link -->
         <li *ngIf="loggedIn()" class="nav-item"  routerLinkActive="active">
           <a class="nav-link" [routerLink]="['/wishlist']">
@@ -15,7 +23,7 @@
                 <span class="badge badge-pill badge-success">2</span>
             </i>
           </a>
-        </li>  
+        </li>
         <!-- Wishlist Link --> 
 
       <!-- Shopping Cart Link -->
@@ -52,6 +60,9 @@
       <div class="dropdown-menu" *dropdownMenu >
         <a class="dropdown-item" [routerLink]="['/editProfile']">
           <i class="fa fa-user"></i> Edit Profile
+        </a>
+        <a class="dropdown-item" [routerLink]="['/boughtlist']">
+          <i class="fa fa-cloud-download"></i> My purchases
         </a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i> Logout</a>

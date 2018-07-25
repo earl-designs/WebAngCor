@@ -4,12 +4,13 @@ import { map } from 'rxjs/operators';
 import { AlertifyService } from './alertify.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService {
-    baseUrl = 'http://localhost:5000/api/auth/';
+    baseUrl = environment.apiUrl + 'auth/';
     userToken: any;
     jwtHelper = new JwtHelperService();
     decodedToken: any;
