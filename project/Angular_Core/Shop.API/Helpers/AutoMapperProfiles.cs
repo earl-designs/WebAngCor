@@ -18,6 +18,8 @@ namespace Shop.API.Helpers
                     opt.MapFrom(src => src.BoughtItems.Count);
                 });
                 
+            CreateMap<UserForUpdateDto, User>();
+                
             CreateMap<ShopItem, ShopItemDto>()
                 .ForMember(dest => dest.ExampleImages, opt => {
                     opt.MapFrom(src => src.ExampleImages.Select(s => s.Path));

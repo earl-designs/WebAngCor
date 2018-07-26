@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { ShopItemForList } from '../../_models/shopItemForList';
-import { BsModalRef, BsModalService } from '../../../../node_modules/ngx-bootstrap';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-shop-item-card',

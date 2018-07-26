@@ -19,7 +19,6 @@ import { LoginRegisterFrameComponent } from './common-components/login-register-
 import { AddNewComponent } from './add-new/add-new.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
-import { EditProfileComponent } from './edit-profile/edit-profile.component';
 
 import { AuthService } from './_services/auth.service';
 import { AlertifyService } from './_services/alertify.service';
@@ -37,6 +36,9 @@ import { ShopItemDetailComponent } from './shop/shop-item-detail/shop-item-detai
 import { ShopItemsResolver } from './_resolvers/shop-items-resolver';
 import { CategorysResolver } from './_resolvers/categorys-resolver';
 import { ShopItemDetailImgGalleryComponent } from './shop/shop-item-detail-img-gallery/shop-item-detail-img-gallery.component';
+import { EditProfileHomeComponent } from './edit-profile/edit-profile-home/edit-profile-home.component';
+import { UserEditResolver } from './_resolvers/user-edit-resolver';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 export function tokenGetter() {
     return localStorage.getItem('token');
@@ -54,13 +56,13 @@ export function tokenGetter() {
       AddNewComponent,
       ShoppingCartComponent,
       WishlistComponent,
-      EditProfileComponent,
       BoughtlistComponent,
       ShopHomeComponent,
       ShopItemCardComponent,
       ShopCategoryComponent,
       ShopItemDetailComponent,
-      ShopItemDetailImgGalleryComponent
+      ShopItemDetailImgGalleryComponent,
+      EditProfileHomeComponent
    ],
    imports: [
       HttpClientModule,
@@ -86,8 +88,10 @@ export function tokenGetter() {
         AlertifyService,
         ErrorInterceptorProvider,
         AuthGuard,
+        PreventUnsavedChanges,
         ShopItemsResolver,
-        CategorysResolver
+        CategorysResolver,
+        UserEditResolver
     ],
    bootstrap: [
       AppComponent

@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <h1 class="mt-4">Your Profile</h1>
+    </div>
+    <div class="col-8">
+      <div class="alert alert-info mt-4" *ngIf="editUserForm.dirty">
+        <strong>Information:</strong> You have made changes. any unsaved changes will be lost!
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="card">
+        <img src="{{user.profilePicPath}}" alt="{{user.username}}" class="car-img-top img-thumbnail">
+        <div class="card-body">
+          <div>
+            <strong>UserName:</strong>
+            <p>{{user.username}}</p>
+          </div>
+          <div>
+            <strong>Email:</strong>
+            <p>{{user.email}}</p>
+          </div>
+          <div>
+            <strong>Member since:</strong>
+            <p>{{user.createDate | date}}</p>
+          </div>
+          <button class="btn btn-success w-100 mb-3" form="editUserForm" [disabled]="!editUserForm.dirty">Save Changes</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="tab-panel">
+        <tabset class="user-tabset">
+          <tab heading="Edit Profile">
+
+            <form class="mt-2" id="editUserForm" #editUserForm="ngForm" (ngSubmit)="updateUser()">
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-5">
+                      <input type="email" name="email" class="form-control" [(ngModel)]="user.email"/>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">Lastname</label>
+                  <div class="col-sm-5">
+                      <input type="text" name="lastName" class="form-control" [(ngModel)]="user.lastName"/>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-sm-2 col-form-label">firstname</label>
+                  <div class="col-sm-5">
+                      <input type="text" name="preName" class="form-control" [(ngModel)]="user.preName"/>
+                  </div>
+                </div>
+            </form>
+
+          </tab>
+
+          <tab heading="Edit Picture">
+            <!-- picture edit -->
+          </tab>
+
+        </tabset>
+      </div>
+    </div>
+  </div>
+</div>

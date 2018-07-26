@@ -32,6 +32,7 @@ namespace Shop.API.Controllers
             return Ok(shopItemsToReturn);
         }
 
+        [AllowAnonymous]
         [HttpGet("item/{id}")]
         public async Task<IActionResult> getShopItem(int id)
         {

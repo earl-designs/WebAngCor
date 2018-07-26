@@ -13,8 +13,8 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getUser(): Observable<User> {
-    return this.http.get<User>(this.baseUrl + 'user/');
+  getUser(id): Observable<User> {
+    return this.http.get<User>(this.baseUrl + 'user/' + id);
   }
 
   getWishlist(id): Observable<ShopItemForList[]> {
@@ -25,4 +25,7 @@ export class UserService {
     return this.http.get<ShopItemForList[]>(this.baseUrl + 'user/bought/' + id);
   }
 
+  updateUser(id: number, user: User) {
+    return this.http.put(this.baseUrl + 'user/' + id, user);
+  }
 }
