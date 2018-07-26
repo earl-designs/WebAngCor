@@ -2,9 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '../../node_modules/@angular/router';
+import { RouterModule } from '@angular/router';
+import { JwtModule } from '@auth0/angular-jwt';
 
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { CarouselModule } from 'ngx-bootstrap';
+import { ModalModule } from 'ngx-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -30,6 +33,14 @@ import { ShopItemService } from './_services/shopItem.service';
 import { ShopHomeComponent } from './shop/shop-home/shop-home.component';
 import { ShopItemCardComponent } from './shop/shop-item-card/shop-item-card.component';
 import { ShopCategoryComponent } from './shop/shop-category/shop-category.component';
+import { ShopItemDetailComponent } from './shop/shop-item-detail/shop-item-detail.component';
+import { ShopItemsResolver } from './_resolvers/shop-items-resolver';
+import { CategorysResolver } from './_resolvers/categorys-resolver';
+import { ShopItemDetailImgGalleryComponent } from './shop/shop-item-detail-img-gallery/shop-item-detail-img-gallery.component';
+
+export function tokenGetter() {
+    return localStorage.getItem('token');
+}
 
 @NgModule({
    declarations: [
@@ -47,14 +58,26 @@ import { ShopCategoryComponent } from './shop/shop-category/shop-category.compon
       BoughtlistComponent,
       ShopHomeComponent,
       ShopItemCardComponent,
-      ShopCategoryComponent
+      ShopCategoryComponent,
+      ShopItemDetailComponent,
+      ShopItemDetailImgGalleryComponent
    ],
    imports: [
       HttpClientModule,
       BrowserModule,
       FormsModule,
+      TabsModule.forRoot(),
       BsDropdownModule.forRoot(),
-      RouterModule.forRoot(appRoutes)
+      CarouselModule.forRoot(),
+      ModalModule.forRoot(),
+      RouterModule.forRoot(appRoutes),
+      JwtModule.forRoot({
+          config: {
+            tokenGetter: tokenGetter,
+            whitelistedDomains: ['localhost:5000'],
+            blacklistedRoutes: ['localhost:5000/api/auth']
+          }
+      })
    ],
    providers: [
         AuthService,
@@ -62,7 +85,9 @@ import { ShopCategoryComponent } from './shop/shop-category/shop-category.compon
         ShopItemService,
         AlertifyService,
         ErrorInterceptorProvider,
-        AuthGuard
+        AuthGuard,
+        ShopItemsResolver,
+        CategorysResolver
     ],
    bootstrap: [
       AppComponent

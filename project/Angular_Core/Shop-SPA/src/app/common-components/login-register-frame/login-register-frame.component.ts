@@ -7,23 +7,10 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 })
 export class LoginRegisterFrameComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
-  loginShow: boolean;
-  registerShow: boolean;
 
   constructor() { }
 
   ngOnInit() {
-    this.loginShow = true;
-  }
-
-  showLogin() {
-    this.loginShow = true;
-    this.registerShow = false;
-  }
-
-  showRegister() {
-    this.registerShow = true;
-    this.loginShow = false;
   }
 
   cancelRegisterMode(registerMode: boolean) {

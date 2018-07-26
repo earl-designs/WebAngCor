@@ -2,7 +2,6 @@
 
 /* default bootstrap / font-awesome  */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-@import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 /* Styles for alertify boxes */
 @import '../node_modules/alertifyjs/build/css/alertify.min.css';
@@ -16,7 +15,6 @@
 body{
 	margin-top:55px;
 }
-
 /* costum Styles */
 .icon{
 	font-size:20px;

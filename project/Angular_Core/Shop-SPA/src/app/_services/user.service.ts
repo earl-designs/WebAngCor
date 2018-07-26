@@ -1,15 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { User } from '../_models/user';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { ShopItemForList } from '../_models/shopItemForList';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Authorization': 'bearer ' + localStorage.getItem('token')
-  })
-};
 
 @Injectable({
   providedIn: 'root'
@@ -20,15 +14,15 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUser(): Observable<User> {
-    return this.http.get<User>(this.baseUrl + 'user/', httpOptions);
+    return this.http.get<User>(this.baseUrl + 'user/');
   }
 
   getWishlist(id): Observable<ShopItemForList[]> {
-    return this.http.get<ShopItemForList[]>(this.baseUrl + 'user/wish/' + id, httpOptions);
+    return this.http.get<ShopItemForList[]>(this.baseUrl + 'user/wish/' + id);
   }
 
   getboughtlist(id): Observable<ShopItemForList[]> {
-    return this.http.get<ShopItemForList[]>(this.baseUrl + 'user/bought/' + id, httpOptions);
+    return this.http.get<ShopItemForList[]>(this.baseUrl + 'user/bought/' + id);
   }
 
 }

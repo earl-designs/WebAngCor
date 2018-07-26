@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="d-none d-lg-block col-lg-3 mt-5">
-				<div class="sticky-top sticky-offset">
+    <div class="d-none d-lg-block col-lg-3">
+				<div class="sticky-top offset-top">
             <app-shop-category [categorys]="categorys"></app-shop-category>
         </div>
     </div>
-    <div class="col-lg-9">
+    <div class="col-lg-9 mt-4">
       <div class="row mt-4">
         <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6 mb-4" *ngFor="let shopItem of shopItems">
           <app-shop-item-card [shopItem]="shopItem"></app-shop-item-card>

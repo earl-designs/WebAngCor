@@ -1,15 +1,10 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { Observable } from '../../../node_modules/rxjs';
+import { Observable } from 'rxjs';
 import { ShopItemForList } from '../_models/shopItemForList';
 import { Category } from '../_models/category';
-
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Authorization': 'bearer ' + localStorage.getItem('token')
-  })
-};
+import { ShopItem } from '../_models/shopItem';
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +15,15 @@ export class ShopItemService {
   constructor(private http: HttpClient) { }
 
   getShopItems(): Observable<ShopItemForList[]> {
-    return this.http.get<ShopItemForList[]>(this.baseUrl + 'Shop/Items', httpOptions);
+    return this.http.get<ShopItemForList[]>(this.baseUrl + 'shop/items');
+  }
+
+  getShopItem(id): Observable<ShopItem> {
+    return this.http.get<ShopItem>(this.baseUrl + 'shop/item/' + id);
   }
 
   getCategorys(): Observable<Category[]> {
-    return this.http.get<Category[]>(this.baseUrl + 'Shop/Categorys', httpOptions);
+    return this.http.get<Category[]>(this.baseUrl + 'shop/categorys');
   }
 
 }

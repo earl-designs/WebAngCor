@@ -21,6 +21,7 @@ namespace Shop.API.Controllers
             _repo = repo;
         }
 
+        [AllowAnonymous]
         [HttpGet("items")]
         public async Task<IActionResult> GetShopItems()
         {
@@ -41,6 +42,7 @@ namespace Shop.API.Controllers
             return Ok(shopItemToReturn);
         }
 
+        [AllowAnonymous]
         [HttpGet("categorys")]
         public async Task<IActionResult> getCategorys(int id)
         {

@@ -3,6 +3,7 @@ import { ShopItemService } from '../../_services/shopItem.service';
 import { AlertifyService } from '../../_services/alertify.service';
 import { ShopItemForList } from '../../_models/shopItemForList';
 import { Category } from '../../_models/category';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-shop-home',
@@ -13,9 +14,15 @@ export class ShopHomeComponent implements OnInit {
   shopItems: ShopItemForList[];
   categorys: Category[];
 
-  constructor(private shopService: ShopItemService, private alertify: AlertifyService) { }
+  constructor(private shopService: ShopItemService,
+              private alertify: AlertifyService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(data => {
+      this.shopItems = data['shopItems'];
+      this.categorys = data['categorys'];
+    });
     this.loadShop();
   }
 

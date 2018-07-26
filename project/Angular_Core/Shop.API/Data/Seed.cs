@@ -37,24 +37,21 @@ namespace Shop.API.Data
                 shopItem.ExampleImages = new ShopItemImage[]{
                     new ShopItemImage{
                         Name = "Image Name " + i,
-                        Path = "assets/img/SeedImg/" + i + ".jpg",
+                        Path = "assets/img/SeedImg/" + (i) + ".jpg",
                         Main = true
-                    }
-                };
-                shopItem.Categorys = new ShopItemCategory[]{
-                    new ShopItemCategory{
-                        ShopItem = shopItem,
-                        Category = _context.Category.Find(1)
                     },
-                    new ShopItemCategory{
-                        ShopItem = shopItem,
-                        Category = _context.Category.Find(5)
+                    new ShopItemImage{
+                        Name = "Image Name " + i,
+                        Path = "assets/img/SeedImg/" + (i < 10 ? i + 1 : i) + ".jpg",
+                        Main = false
                     },
-                    new ShopItemCategory{
-                        ShopItem = shopItem,
-                        Category = _context.Category.Find(9)
-                    }
-                };
+                    new ShopItemImage{
+                        Name = "Image Name " + i,
+                        Path = "assets/img/SeedImg/" + (i < 9 ? i + 2 : i) + ".jpg",
+                        Main = false
+                    }};
+                    
+                    
                 _context.ShopItem.Add(shopItem);
                 i ++;
             }

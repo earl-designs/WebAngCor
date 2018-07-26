@@ -11,7 +11,7 @@
         <!-- Shop Link -->
         <li class="nav-item"  routerLinkActive="active">
           <a class="nav-link" [routerLink]="['/shop']">
-            <i class="icon fa fa-shopping-basket"></i>
+            <i class="icon fas fa-shopping-basket"></i>
           </a>
         </li>
         <!-- Shop Link --> 
@@ -19,7 +19,7 @@
         <!-- Wishlist Link -->
         <li *ngIf="loggedIn()" class="nav-item"  routerLinkActive="active">
           <a class="nav-link" [routerLink]="['/wishlist']">
-            <i class="icon fa fa-heart">
+            <i class="icon far fa-heart">
                 <span class="badge badge-pill badge-success">2</span>
             </i>
           </a>
@@ -29,7 +29,7 @@
       <!-- Shopping Cart Link -->
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/shoppingCart']">
-          <i class="icon fa fa-shopping-cart">
+          <i class="icon fas fa-shopping-cart">
             <span class="badge badge-pill badge-warning">5</span>
           </i>
         </a>
@@ -39,7 +39,7 @@
       <!-- Add new Link -->
       <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
         <a class="nav-link" [routerLink]="['/addNew']">
-          <i class="icon fa fa-plus"></i>
+          <i class="icon fas fa-plus"></i>
         </a>
       </li>
       <!-- Add new Link -->
@@ -59,13 +59,13 @@
     
       <div class="dropdown-menu" *dropdownMenu >
         <a class="dropdown-item" [routerLink]="['/editProfile']">
-          <i class="fa fa-user"></i> Edit Profile
+          <i class="fas fa-user-cog"></i> Edit Profile
         </a>
         <a class="dropdown-item" [routerLink]="['/boughtlist']">
-          <i class="fa fa-cloud-download"></i> My purchases
+          <i class="fas fa-cloud-download-alt"></i> My purchases
         </a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" (click)="logout()"><i class="fa fa-sign-out"></i> Logout</a>
+        <a class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
       </div>
     </div>
     <!-- navbar Right End -->

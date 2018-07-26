@@ -7,10 +7,12 @@ import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { AuthGuard } from './_guards/auth.guard';
 import { BoughtlistComponent } from './boughtlist/boughtlist.component';
 import { ShopHomeComponent } from './shop/shop-home/shop-home.component';
+import { ShopItemsResolver } from './_resolvers/shop-items-resolver';
+import { CategorysResolver } from './_resolvers/categorys-resolver';
 
 export const appRoutes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'shop', component: ShopHomeComponent},
+    {path: 'shop', component: ShopHomeComponent, resolve: {shopItems: ShopItemsResolver, categorys: CategorysResolver}},
     {path: 'shoppingCart', component: ShoppingCartComponent},
     {
         path: '',

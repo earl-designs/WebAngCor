@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef } from '@angular/core';
 import { ShopItemForList } from '../../_models/shopItemForList';
+import { BsModalRef, BsModalService } from '../../../../node_modules/ngx-bootstrap';
 
 @Component({
   selector: 'app-shop-item-card',
@@ -8,10 +9,14 @@ import { ShopItemForList } from '../../_models/shopItemForList';
 })
 export class ShopItemCardComponent implements OnInit {
   @Input() shopItem: ShopItemForList;
+  modalRef: BsModalRef;
 
-  constructor() { }
+  constructor(private modalService: BsModalService) {}
 
   ngOnInit() {
   }
 
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+  }
 }

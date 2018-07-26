@@ -1,14 +1,14 @@
 .card-margin{
-	margin-top:20px;
+	margin-bottom:20px;
 }
 .card-img-wrapper{
 	padding-left:15px;
 	padding-right:15px;
 	margin-top:-20px;
 }
-.card-img-wrapper img{	
-	border-radius: 5px;	
-	box-shadow: 0 0 8px 3px rgba(150, 150, 150, 0.5);
+.card-img-wrapper img{
+	border-radius: 5px;		
+	box-shadow: 0 0 10px 5px rgba(100, 100, 100, 0.5);
 }
 .card-shop, .card-shop img{	
 	transition: margin-top 0.2s, margin-bottom 0.2s, box-shadow 0.2s;
@@ -16,8 +16,12 @@
 }
 .card-shop:hover{
 	transform: scale(1.1, 1.1);
-	box-shadow: 0 0 15px 7px rgba(200, 200, 200, 0.5);
 }
 .card-shop:hover img{
-	box-shadow: 0 0 15px 7px rgba(50, 50, 256, 0.5);
+	transform: scale(1.05, 1.05);
+	box-shadow: 0 0 15px 7px rgba(200, 200, 200, 0.5);
+}
+
+.modal-btn{	
+    cursor: pointer;
 }
