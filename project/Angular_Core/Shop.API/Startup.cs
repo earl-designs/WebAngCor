@@ -41,6 +41,7 @@ namespace Shop.API
                         Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
             services.AddCors();
+            services.Configure<ImageSaveSettings>(Configuration.GetSection("ImageSaveSettings"));
             services.AddAutoMapper();
             services.AddTransient<Seed>(); // TODO: MMA für Seeding --> Entfernen
             services.AddScoped<IAuthRepository, AuthRepository>();
@@ -83,7 +84,7 @@ namespace Shop.API
             }
 
             //seeder.SeedData(); // TODO: MMA für Seeding --> Entfernen
-            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().AllowCredentials());
+            app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
             app.UseAuthentication();
             app.UseMvc();
         }

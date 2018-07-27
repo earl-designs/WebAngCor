@@ -4,9 +4,13 @@
       <img src="" width="30" height="30" alt="" class="rounded-circle">
       Shop Brand
     </a>
+    <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="navbar-collapse" [ngbCollapse]="isNavbarCollapsed">
 
-      <!-- navbar Left -->
-    <ul class="navbar-nav mr-auto">
+        <!-- navbar Left -->
+      <ul class="navbar-nav mr-auto">
 
         <!-- Shop Link -->
         <li class="nav-item"  routerLinkActive="active">
@@ -26,49 +30,50 @@
         </li>
         <!-- Wishlist Link --> 
 
-      <!-- Shopping Cart Link -->
-      <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/shoppingCart']">
-          <i class="icon fas fa-shopping-cart">
-            <span class="badge badge-pill badge-warning">5</span>
-          </i>
-        </a>
-      </li>
-      <!-- Shopping Cart Link -->
+        <!-- Shopping Cart Link -->
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/shoppingCart']">
+            <i class="icon fas fa-shopping-cart">
+              <span class="badge badge-pill badge-warning">5</span>
+            </i>
+          </a>
+        </li>
+        <!-- Shopping Cart Link -->
 
-      <!-- Add new Link -->
-      <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['/addNew']">
-          <i class="icon fas fa-plus"></i>
-        </a>
-      </li>
-      <!-- Add new Link -->
+        <!-- Add new Link -->
+        <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
+          <a class="nav-link" [routerLink]="['/addNew']">
+            <i class="icon fas fa-plus"></i>
+          </a>
+        </li>
+        <!-- Add new Link -->
 
-    </ul>
-    <!-- navbar Left End -->
+      </ul>
+      <!-- navbar Left End -->
 
-    <div *ngIf="!loggedIn()" class="navbar-nav justify-content-end">
-      <button class="btn btn-outline-success">Login</button>
-    </div>
-
-    <!-- navbar Right -->
-    <div *ngIf="loggedIn()" class="dropdown" dropdown >
-      <a class="dropdown-toggle text-light" dropdownToggle >
-        Welcome {{authService.decodedToken?.unique_name | titlecase}}
-      </a>
-    
-      <div class="dropdown-menu" *dropdownMenu >
-        <a class="dropdown-item" [routerLink]="['/editProfile']">
-          <i class="fas fa-user-cog"></i> Edit Profile
-        </a>
-        <a class="dropdown-item" [routerLink]="['/boughtlist']">
-          <i class="fas fa-cloud-download-alt"></i> My purchases
-        </a>
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+      <div *ngIf="!loggedIn()" class="navbar-nav justify-content-end">
+        <button class="btn btn-outline-success">Login</button>
       </div>
-    </div>
-    <!-- navbar Right End -->
 
+      <!-- navbar Right -->
+      <div *ngIf="loggedIn()" class="nav-item dropdown" dropdown >
+        <a class="dropdown-toggle nav-link" dropdownToggle >
+          Welcome {{authService.decodedToken?.unique_name | titlecase}}
+        </a>
+      
+        <div class="dropdown-menu" *dropdownMenu >
+          <a class="dropdown-item" [routerLink]="['/editProfile']">
+            <i class="fas fa-user-cog"></i> Edit Profile
+          </a>
+          <a class="dropdown-item" [routerLink]="['/boughtlist']">
+            <i class="fas fa-cloud-download-alt"></i> My purchases
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" (click)="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+      </div>
+      <!-- navbar Right End -->
+
+    </div>
   </div>
 </nav>

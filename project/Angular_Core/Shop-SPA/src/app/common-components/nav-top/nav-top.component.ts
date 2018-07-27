@@ -8,6 +8,7 @@ import { AuthService } from '../../_services/auth.service';
 })
 export class NavTopComponent implements OnInit {
   model: any = {};
+  isNavbarCollapsed = true;
 
   constructor(public authService: AuthService) { }
 

@@ -1,0 +1,8 @@
+img.image-thumbnail {
+    height: 300px;
+    margin-bottom: 2px;
+}
+
+.nv-file-over {
+    box-shadow: 0 0 10px 5px rgba(39, 255, 68, 0.5);
+}

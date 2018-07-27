@@ -5,7 +5,7 @@ export interface User {
     createDate: Date;
     preName: string;
     lastName: string;
-    profilePicPath: string;
+    picturePath: string;
 
     wishlistCount: number;
     bougtItemsCount: number;

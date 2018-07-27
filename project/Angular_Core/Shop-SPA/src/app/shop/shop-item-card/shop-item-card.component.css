@@ -14,14 +14,41 @@
 	transition: margin-top 0.2s, margin-bottom 0.2s, box-shadow 0.2s;
 	-webkit-transition: all .5s ease;
 }
-.card-shop:hover{
-	transform: scale(1.1, 1.1);
-}
-.card-shop:hover img{
-	transform: scale(1.05, 1.05);
-	box-shadow: 0 0 15px 7px rgba(200, 200, 200, 0.5);
-}
 
 .modal-btn{	
     cursor: pointer;
+}
+
+ /* larger then md */
+@media only screen and (min-width: 768px){
+	.card-shop:hover{
+		transform: scale(1.1, 1.1);
+	}
+}
+@media only screen and (min-width: 768px){
+	.card-shop:hover img{
+		transform: scale(1.05, 1.05);
+		box-shadow: 0 0 15px 7px rgba(200, 200, 200, 0.5);
+	}
+}
+
+ /* between md and sm */
+@media only screen and (max-width: 768px) and (min-width: 540px){
+	.card-shop:hover{
+		transform: scale(1.05, 1.05);
+	}
+}
+@media only screen and (max-width: 768px) and (min-width: 540px){
+	.card-shop:hover img{
+		transform: scale(1.05, 1.05);
+		box-shadow: 0 0 15px 7px rgba(200, 200, 200, 0.5);
+	}
+}
+
+ /* min width sm */
+@media only screen and (max-width: 540px){
+	.card-shop:hover img{
+		transform: scale(1.05, 1.05);
+		box-shadow: 0 0 15px 7px rgba(200, 200, 200, 0.5);
+	}
 }

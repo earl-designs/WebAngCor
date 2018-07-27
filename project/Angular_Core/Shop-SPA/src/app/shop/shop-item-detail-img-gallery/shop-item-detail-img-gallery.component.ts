@@ -7,6 +7,7 @@ import { ShopItem } from '../../_models/shopItem';
   styleUrls: ['./shop-item-detail-img-gallery.component.css']
 })
 export class ShopItemDetailImgGalleryComponent implements OnInit {
+  myInterval = 0;
   @Input() shopItem: ShopItem;
 
   constructor() { }

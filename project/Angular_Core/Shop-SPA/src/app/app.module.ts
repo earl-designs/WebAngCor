@@ -8,6 +8,9 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FileUploadModule } from '../../node_modules/ng2-file-upload';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -39,7 +42,7 @@ import { ShopItemDetailImgGalleryComponent } from './shop/shop-item-detail-img-g
 import { EditProfileHomeComponent } from './edit-profile/edit-profile-home/edit-profile-home.component';
 import { UserEditResolver } from './_resolvers/user-edit-resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
-
+import { UserImageEditComponent } from './edit-profile/user-image-edit/user-image-edit.component';
 export function tokenGetter() {
     return localStorage.getItem('token');
 }
@@ -62,7 +65,9 @@ export function tokenGetter() {
       ShopCategoryComponent,
       ShopItemDetailComponent,
       ShopItemDetailImgGalleryComponent,
-      EditProfileHomeComponent
+      EditProfileHomeComponent,
+      UserImageEditComponent,
+      UserImageEditComponent
    ],
    imports: [
       HttpClientModule,
@@ -72,6 +77,8 @@ export function tokenGetter() {
       BsDropdownModule.forRoot(),
       CarouselModule.forRoot(),
       ModalModule.forRoot(),
+      NgbModule.forRoot(),
+      FileUploadModule,
       RouterModule.forRoot(appRoutes),
       JwtModule.forRoot({
           config: {

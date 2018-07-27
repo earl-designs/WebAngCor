@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-4">
       <div class="card">
-        <img src="{{user.profilePicPath}}" alt="{{user.username}}" class="car-img-top img-thumbnail">
+        <img [src]="user.picturePath" alt="{{user.username}}" class="card-img-top img-thumbnail">
         <div class="card-body">
           <div>
             <strong>UserName:</strong>
@@ -61,7 +61,7 @@
           </tab>
 
           <tab heading="Edit Picture">
-            <!-- picture edit -->
+            <app-user-image-edit></app-user-image-edit>
           </tab>
 
         </tabset>
