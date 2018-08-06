@@ -1,0 +1,27 @@
+<div class="card-body tab-pane" *ngIf="!loggedIn()">
+  <h2 class="card-title text-center">Login</h2>
+
+  <form #loginForm="ngForm" (ngSubmit)="login()">
+
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" class="form-control" placeholder="Username" name="username" required [(ngModel)]="model.username" />
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" class="form-control" placeholder="Password" name="password" required [(ngModel)]="model.password" />
+    </div>
+
+    <div class="form-check mb-3">
+      <input type="checkbox" class="form-check-input">
+      <label class="form-check-label">Remember me</label>
+    </div>
+    <button class="btn btn-lg btn-success btn-block" type="submit" [(disabled)]="!loginForm.valid" >Login</button>
+
+  </form>
+</div>
+  
+<div class="card-body tab-pane" *ngIf="loggedIn()">
+  <h2 class="card-title text-center">Allready Logged In</h2>
+</div>

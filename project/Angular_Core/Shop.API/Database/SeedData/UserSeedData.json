@@ -1,0 +1,47 @@
+[
+  {
+    "Username": "Alford",
+    "Email": "bettieingram@spherix.com",
+    "Password": "password",
+    "CreateDate": "2017-05-22",
+    "PreName": "Alford",
+    "LastName": "Alford",
+    "PicturePath": "https://randomuser.me/api/portraits/men/43.jpg"
+  },
+  {
+    "Username": "Holden",
+    "Email": "barnettrodriquez@webiotic.com",
+    "Password": "password",
+    "CreateDate": "2017-01-24",
+    "PreName": "Holden",
+    "LastName": "Holden",
+    "PicturePath": "https://randomuser.me/api/portraits/men/20.jpg"
+  },
+  {
+    "Username": "Smith",
+    "Email": "castanedadawson@koffee.com",
+    "Password": "password",
+    "CreateDate": "2017-01-07",
+    "PreName": "Smith",
+    "LastName": "Smith",
+    "PicturePath": "https://randomuser.me/api/portraits/men/99.jpg"
+  },
+  {
+    "Username": "Shelton",
+    "Email": "barbarabrennan@mazuda.com",
+    "Password": "password",
+    "CreateDate": "2017-08-22",
+    "PreName": "Shelton",
+    "LastName": "Shelton",
+    "PicturePath": "https://randomuser.me/api/portraits/men/9.jpg"
+  },
+  {
+    "Username": "Riddle",
+    "Email": "mcdanielayers@zidox.com",
+    "Password": "password",
+    "CreateDate": "2017-07-09",
+    "PreName": "Riddle",
+    "LastName": "Riddle",
+    "PicturePath": "https://randomuser.me/api/portraits/men/82.jpg"
+  }
+]

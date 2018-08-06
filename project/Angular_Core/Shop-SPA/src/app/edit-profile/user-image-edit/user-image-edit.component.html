@@ -1,0 +1,12 @@
+<h3>Upload new Photo</h3>
+
+<div ng2FileDrop
+      [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
+      (fileOver)="fileOverBase($event)"
+      [uploader]="uploader"
+      class="card bg-faded p-3 text-center mb-3 my-drop-zone">
+    <i class="fas fa-upload fa-3x"></i>
+    Drop Photos Here
+</div>
+
+<input type="file" ng2FileSelect [uploader]="uploader" name="userImage"/>

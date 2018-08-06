@@ -1,0 +1,10 @@
+<div class="card my-5">
+  <tabset>
+    <tab heading="Login">
+        <app-login></app-login>
+    </tab>
+    <tab heading="Register">
+        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+    </tab>
+  </tabset>
+</div>

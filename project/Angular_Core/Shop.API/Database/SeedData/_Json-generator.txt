@@ -1,0 +1,48 @@
+
+
+##########################################################
+# Category Data
+##########################################################
+
+[
+  '{{repeat(10)}}',
+  {    
+    Name: 'Category Name {{index()+1}}'    
+  }
+]
+
+##########################################################
+# ShopItem + ShopItemCategory Data
+##########################################################
+
+[
+  '{{repeat(10)}}',
+  {    
+    Id: '{{index()+1}}',
+    CreateDate: '{{date(new Date(2017,0,1), new Date(2017, 12, 31), "YYYY-MM-dd")}}',
+    Description: '{{lorem(1)}}',
+    Name: 'Item Name {{index()+1}}',
+    Price: '{{floating(1, 25, 2)}}',
+    PublishDate: '{{date(new Date(2018,0,1), new Date(2018, 7, 23), "YYYY-MM-dd")}}'   
+  }
+]
+
+##########################################################
+# User + ProfilPic Data
+##########################################################
+
+[
+  '{{repeat(5)}}',
+  {
+    Username: '{{surname()}}',
+    Email: '{{email([random])}}',
+    Password: 'password',
+    
+    CreateDate: '{{date(new Date(2017,0,1), new Date(2017, 7, 31), "YYYY-MM-dd")}}',
+    
+    PreName: function(){ return this.Username; },
+    LastName: function(){ return this.Username; },
+    
+    PicturePath: function(num) {return 'https://randomuser.me/api/portraits/men/' + num.integer(1,99) + '.jpg';}
+  }
+]

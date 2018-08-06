@@ -1,0 +1,52 @@
+<div class="card-margin">
+  <div class="card card-shop h-100">
+
+<!-- detail Button -->
+    <div class="modal-btn" (click)="lgModal.show()"> <!-- [routerLink]="['/shop/', shopItem.id]" routerLinkActive="active" -->
+      <div class="card-img-wrapper"> <!-- img-div-shop -->
+        <img class="card-img-top" alt="{{shopItem.name}}" [src]="mainImage" *ngIf="isImageLoading; else noImageFound">
+      </div>
+  
+      <div class="card-body">
+        <h4 class="card-title">{{shopItem.name}}</h4>
+        <h5>${{shopItem.price}}</h5>
+      </div>
+    </div>
+<!-- detail Button -->
+
+    <div class="card-footer">
+      <small class="text-muted">
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+        <span class="fa fa-star"></span>
+      </small>
+      <button type="button" class="btn btn-success btn-sm float-right"><i class="fas fa-shopping-cart"></i></button>
+      <button type="button" class="btn btn-info btn-sm float-right mr-2"><i class="far fa-heart"></i></button>
+    </div>
+
+  </div>
+</div>
+ 
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+          <h4 class="modal-title pull-left">{{shopItem.name}}</h4>
+          <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+              <i class="fa fa-times"></i>
+          </button>
+      </div>
+      <div class="modal-body">
+          <app-shop-item-detail [shopItem]="shopItem"></app-shop-item-detail>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #noImageFound>
+    <div class="card-img-top text-center img-thumbnail no-img-found">
+        <i class="fas fa-exclamation-triangle my-4"></i>
+    </div>
+</ng-template>

@@ -1,0 +1,82 @@
+[
+  {
+    "Id": 1,
+    "CreateDate": "2017-02-06",
+    "Description": "Do consequat aute dolor ad irure est anim eu do Lorem quis cillum do.",
+    "Name": "Item Name 1",
+    "Price": 16.23,
+    "PublishDate": "2018-01-23"
+  },
+  {
+    "Id": 2,
+    "CreateDate": "2017-09-04",
+    "Description": "Consequat irure magna reprehenderit duis aliqua consequat sunt.",
+    "Name": "Item Name 2",
+    "Price": 11.98,
+    "PublishDate": "2018-07-31"
+  },
+  {
+    "Id": 3,
+    "CreateDate": "2017-11-20",
+    "Description": "Fugiat laboris ea enim tempor Lorem sint velit qui ex.",
+    "Name": "Item Name 3",
+    "Price": 8.34,
+    "PublishDate": "2018-08-21"
+  },
+  {
+    "Id": 4,
+    "CreateDate": "2017-06-07",
+    "Description": "Irure ea esse amet dolor.",
+    "Name": "Item Name 4",
+    "Price": 20.39,
+    "PublishDate": "2018-06-07"
+  },
+  {
+    "Id": 5,
+    "CreateDate": "2017-06-12",
+    "Description": "Ex do in enim eiusmod anim ullamco ullamco excepteur non ut ullamco labore pariatur aliqua.",
+    "Name": "Item Name 5",
+    "Price": 6.61,
+    "PublishDate": "2018-08-21"
+  },
+  {
+    "Id": 6,
+    "CreateDate": "2017-12-22",
+    "Description": "Consequat laborum exercitation magna deserunt adipisicing est pariatur duis enim irure nulla.",
+    "Name": "Item Name 6",
+    "Price": 6.88,
+    "PublishDate": "2018-04-12"
+  },
+  {
+    "Id": 7,
+    "CreateDate": "2017-05-05",
+    "Description": "Ad aute dolor eiusmod consequat ad.",
+    "Name": "Item Name 7",
+    "Price": 5.5,
+    "PublishDate": "2018-03-02"
+  },
+  {
+    "Id": 8,
+    "CreateDate": "2017-07-20",
+    "Description": "Eiusmod irure Lorem est tempor est velit in in.",
+    "Name": "Item Name 8",
+    "Price": 3.9,
+    "PublishDate": "2018-03-27"
+  },
+  {
+    "Id": 9,
+    "CreateDate": "2017-10-29",
+    "Description": "Ex ut voluptate culpa dolore dolor pariatur ut nulla sint sit irure.",
+    "Name": "Item Name 9",
+    "Price": 2.59,
+    "PublishDate": "2018-02-15"
+  },
+  {
+    "Id": 10,
+    "CreateDate": "2017-12-30",
+    "Description": "Mollit ut nisi nulla velit id et officia mollit.",
+    "Name": "Item Name 10",
+    "Price": 16.35,
+    "PublishDate": "2018-08-22"
+  }
+]

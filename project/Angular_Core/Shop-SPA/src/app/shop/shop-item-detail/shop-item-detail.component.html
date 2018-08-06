@@ -1,0 +1,33 @@
+<div class="card card-shop">
+  <!--
+  <div class="card-header">
+    <h4 class="card-title">{{shopItem.name}}</h4>
+  </div>
+  -->
+  <div class="card-img-wrapper">
+      <app-shop-item-detail-img-gallery [shopItem]="shopItem"></app-shop-item-detail-img-gallery>
+  </div>
+
+  <div class="card-body">
+    <p>{{shopItem?.publishDate | date}}</p>
+    <p>{{shopItem?.description}}</p>
+  </div>
+
+  <div class="card-footer">
+    <div class="float-left">
+        <small class="text-muted">
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </small>
+      <h5>${{shopItem?.price}}</h5>
+    </div>
+    <div class="float-right">
+        <button type="button" class="btn btn-success float-right"><i class="icon fas fa-shopping-cart"></i></button>
+        <button type="button" class="btn btn-info float-right mr-2"><i class="icon far fa-heart"></i></button>
+    </div>
+  </div>
+
+</div>
