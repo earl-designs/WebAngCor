@@ -40,6 +40,8 @@ namespace Shop.API.Data
                                           .Include(p => p.Categorys).ThenInclude(x => x.Category)
                                           .Include(p => p.ExampleImages)
                                           .FirstOrDefaultAsync(u => u.Id == id);
+            // var exampleImages = await _context.ShopItemImage.OrderBy(o => o.Main == true).Where(w => w.ShopItemId == id).ToListAsync();
+            // shopItems.ExampleImages = exampleImages;
 
             return shopItems;
         }
