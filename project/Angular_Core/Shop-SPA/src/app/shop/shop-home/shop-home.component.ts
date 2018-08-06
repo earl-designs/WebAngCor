@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ShopItemService } from '../../_services/shopItem.service';
 import { AlertifyService } from '../../_services/alertify.service';
-import { ShopItemForList } from '../../_models/shopItemForList';
 import { Category } from '../../_models/category';
 import { ActivatedRoute } from '@angular/router';
+import { ShopItem } from '../../_models/shopItem';
 
 @Component({
   selector: 'app-shop-home',
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./shop-home.component.css']
 })
 export class ShopHomeComponent implements OnInit {
-  shopItems: ShopItemForList[];
+  shopItems: ShopItem[];
   categorys: Category[];
 
   constructor(private shopService: ShopItemService,
@@ -27,7 +27,7 @@ export class ShopHomeComponent implements OnInit {
   }
 
   loadShop() {
-    this.shopService.getShopItems().subscribe((shopItems: ShopItemForList[]) => {
+    this.shopService.getShopItems().subscribe((shopItems: ShopItem[]) => {
       this.shopItems = shopItems;
     }, error => {
       this.alertify.error(error);

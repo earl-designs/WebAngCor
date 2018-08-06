@@ -112,7 +112,7 @@ namespace Shop.API.Controllers
                 }
             }
 
-            var incrementPath = _imgSettings.Value.UserRoot + guidName;
+            var incrementPath = guidName;
 
             userFromRepo.PicturePath = incrementPath;
 

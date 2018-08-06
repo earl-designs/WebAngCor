@@ -4,7 +4,7 @@
 <!-- detail Button -->
     <div class="modal-btn" (click)="lgModal.show()"> <!-- [routerLink]="['/shop/', shopItem.id]" routerLinkActive="active" -->
       <div class="card-img-wrapper"> <!-- img-div-shop -->
-        <img class="card-img-top" src="{{shopItem.exampleImage}}" alt="{{shopItem.name}}">
+        <img class="card-img-top" alt="{{shopItem.name}}" [src]="mainImage" *ngIf="isImageLoading; else noImageFound">
       </div>
   
       <div class="card-body">
@@ -39,8 +39,14 @@
           </button>
       </div>
       <div class="modal-body">
-          <app-shop-item-detail [shopItemId]="shopItem.id"></app-shop-item-detail>
+          <app-shop-item-detail [shopItem]="shopItem"></app-shop-item-detail>
       </div>
     </div>
   </div>
 </div>
+
+<ng-template #noImageFound>
+    <div class="card-img-top text-center img-thumbnail no-img-found">
+        <i class="fas fa-exclamation-triangle my-4"></i>
+    </div>
+</ng-template>

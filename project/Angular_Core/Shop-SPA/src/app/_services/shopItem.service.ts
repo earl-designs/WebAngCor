@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { Observable } from 'rxjs';
-import { ShopItemForList } from '../_models/shopItemForList';
 import { Category } from '../_models/category';
 import { ShopItem } from '../_models/shopItem';
 
@@ -14,8 +13,8 @@ export class ShopItemService {
 
   constructor(private http: HttpClient) { }
 
-  getShopItems(): Observable<ShopItemForList[]> {
-    return this.http.get<ShopItemForList[]>(this.baseUrl + 'shop/items');
+  getShopItems(): Observable<ShopItem[]> {
+    return this.http.get<ShopItem[]>(this.baseUrl + 'shop/items');
   }
 
   getShopItem(id): Observable<ShopItem> {

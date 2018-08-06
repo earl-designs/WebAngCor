@@ -19,3 +19,7 @@ body{
 .icon{
 	font-size:20px;
 }
+
+.carousel-control {
+    cursor: pointer;
+}

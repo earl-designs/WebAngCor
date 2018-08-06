@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 import { environment } from '../../../environments/environment';
 import { AuthService } from '../../_services/auth.service';
@@ -9,6 +9,7 @@ import { AuthService } from '../../_services/auth.service';
   styleUrls: ['./user-image-edit.component.css']
 })
 export class UserImageEditComponent implements OnInit {
+  @Output() reloadImage = new EventEmitter();
   uploader: FileUploader;
   hasBaseDropZoneOver = false;
   baseUrl = environment.apiUrl;
@@ -35,5 +36,8 @@ export class UserImageEditComponent implements OnInit {
     });
 
     this.uploader.onAfterAddingFile = (file) => { file.withCredentials = false; };
+    this.uploader.onCompleteItem = (item: any, response: any, status: any, headers: any) => {
+      this.reloadImage.emit();
+    };
   }
 }

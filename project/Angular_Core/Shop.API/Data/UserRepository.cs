@@ -40,6 +40,13 @@ namespace Shop.API.Data
             return users;
         }
 
+        public async Task<string> GetUserImagePath(int id)
+        {
+            var user = await _context.User.FirstOrDefaultAsync(x => x.Id == id);
+            var imagePath = user.PicturePath;
+            return imagePath;
+        }
+
         public async Task<IEnumerable<ShopItem>> GetBoughtItems(int id)
         {
             var shopItems = await _context.Wishlist.Where(w => w.UserId == id)

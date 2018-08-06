@@ -3,7 +3,7 @@ export interface ShopItem {
     name: string;
     description: string;
     price: number;
-    exampleImages: Array<string>;
+    exampleImagesId: Array<number>;
     categorys: Array<string>;
     publishDate: Date;
     createDate: Date;

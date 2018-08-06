@@ -4,16 +4,16 @@ import { ShopItemService } from '../_services/shopItem.service';
 import { AlertifyService } from '../_services/alertify.service';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { ShopItemForList } from '../_models/shopItemForList';
+import { ShopItem } from '../_models/shopItem';
 
 @Injectable()
-export class ShopItemsResolver implements Resolve<ShopItemForList[]> {
+export class ShopItemsResolver implements Resolve<ShopItem[]> {
 
     constructor(private shopService: ShopItemService,
                 private alertify: AlertifyService,
                 private router: Router) {}
 
-    resolve (route: ActivatedRouteSnapshot): Observable<ShopItemForList[]> {
+    resolve (route: ActivatedRouteSnapshot): Observable<ShopItem[]> {
         return this.shopService.getShopItems().pipe(
             catchError(error => {
                 this.alertify.error('Problem retrieving data');

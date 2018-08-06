@@ -37,17 +37,17 @@ namespace Shop.API.Data
                 shopItem.ExampleImages = new ShopItemImage[]{
                     new ShopItemImage{
                         Name = "Image Name " + i,
-                        Path = "assets/img/SeedImg/" + (i) + ".jpg",
+                        Path = (i) + ".jpg",
                         Main = true
                     },
                     new ShopItemImage{
                         Name = "Image Name " + i,
-                        Path = "assets/img/SeedImg/" + (i < 10 ? i + 1 : i) + ".jpg",
+                        Path = (i < 10 ? i + 1 : i) + ".jpg",
                         Main = false
                     },
                     new ShopItemImage{
                         Name = "Image Name " + i,
-                        Path = "assets/img/SeedImg/" + (i < 9 ? i + 2 : i) + ".jpg",
+                        Path = (i < 9 ? i + 2 : i) + ".jpg",
                         Main = false
                     }};
                     

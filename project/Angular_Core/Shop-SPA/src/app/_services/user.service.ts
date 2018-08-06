@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { User } from '../_models/user';
 import { Observable } from 'rxjs';
-import { ShopItemForList } from '../_models/shopItemForList';
+import { ShopItem } from '../_models/shopItem';
 
 @Injectable({
   providedIn: 'root'
@@ -17,12 +17,12 @@ export class UserService {
     return this.http.get<User>(this.baseUrl + 'user/' + id);
   }
 
-  getWishlist(id): Observable<ShopItemForList[]> {
-    return this.http.get<ShopItemForList[]>(this.baseUrl + 'user/wish/' + id);
+  getWishlist(id): Observable<ShopItem[]> {
+    return this.http.get<ShopItem[]>(this.baseUrl + 'user/wish/' + id);
   }
 
-  getboughtlist(id): Observable<ShopItemForList[]> {
-    return this.http.get<ShopItemForList[]>(this.baseUrl + 'user/bought/' + id);
+  getboughtlist(id): Observable<ShopItem[]> {
+    return this.http.get<ShopItem[]>(this.baseUrl + 'user/bought/' + id);
   }
 
   updateUser(id: number, user: User) {

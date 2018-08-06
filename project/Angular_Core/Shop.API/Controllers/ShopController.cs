@@ -23,11 +23,11 @@ namespace Shop.API.Controllers
 
         [AllowAnonymous]
         [HttpGet("items")]
-        public async Task<IActionResult> GetShopItems()
+        public async Task<IActionResult> getShopItems()
         {
             var shopItems = await _repo.GetShopItem();
 
-            var shopItemsToReturn = _mapper.Map<IEnumerable<ShopItemforListDto>>(shopItems);
+            var shopItemsToReturn = _mapper.Map<IEnumerable<ShopItemDto>>(shopItems);
 
             return Ok(shopItemsToReturn);
         }

@@ -1,6 +1,3 @@
-Refactor userImage names to "Image"
+- Refactor userImage names to "Image"
 
-image HttpGet ond api
-https://stackoverflow.com/questions/40794275/return-jpeg-image-from-asp-net-core-webapi
-
-API ShipItem images sorting
+- API ShipItem images sorting

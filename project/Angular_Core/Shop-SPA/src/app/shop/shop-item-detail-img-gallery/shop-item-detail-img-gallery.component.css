@@ -3,7 +3,12 @@ img{
     border-radius:0px;
 	transition: margin-top 0.2s, margin-bottom 0.2s, box-shadow 0.2s;
 	-webkit-transition: all 1s ease;
+    cursor: zoom-in;
 }
-img:hover{
+img.scale{
     transform: scale(1.5, 1.5);
+    cursor: zoom-out;
+}
+.no-img-found{
+    font-size: 25px;
 }

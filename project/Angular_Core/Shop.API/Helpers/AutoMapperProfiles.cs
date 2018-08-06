@@ -21,16 +21,16 @@ namespace Shop.API.Helpers
             CreateMap<UserForUpdateDto, User>();
                 
             CreateMap<ShopItem, ShopItemDto>()
-                .ForMember(dest => dest.ExampleImages, opt => {
-                    opt.MapFrom(src => src.ExampleImages.Select(s => s.Path));
+                .ForMember(dest => dest.ExampleImagesId, opt => {
+                    opt.MapFrom(src => src.ExampleImages.Select(s => s.Id));
                 })
                 .ForMember(dest => dest.Categorys, opt => {
                     opt.MapFrom(src => src.Categorys.Select(s => s.Category.Name));
                 });
 
             CreateMap<ShopItem, ShopItemforListDto>()
-                .ForMember(dest => dest.ExampleImage, opt => {
-                    opt.MapFrom(src => src.ExampleImages.FirstOrDefault(p => p.Main == true).Path);
+                .ForMember(dest => dest.MainImageId, opt => {
+                    opt.MapFrom(src => src.ExampleImages.FirstOrDefault(p => p.Main == true).Id);
                 });
             
             CreateMap<ShopItem, ShopItemForEditDto>();

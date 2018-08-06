@@ -50,6 +50,25 @@ namespace Shop.API.Data
 
             return categorys;
         }
+        
+        public async Task<string> GetShopItemImagePath(int id)
+        {
+            var shopItemImage = await _context.ShopItemImage.OrderBy(o => o.Main == true)
+                                                            .FirstOrDefaultAsync(x => x.Id == id);
+
+            var path = shopItemImage?.Path;
+
+            return path;
+        }
+        
+        public async Task<string> GetShopItemMainImagePath(int id)
+        {
+            var shopItemImage = await _context.ShopItemImage.FirstOrDefaultAsync(x => x.ShopItemId == id && x.Main == true);
+            
+            var path = shopItemImage?.Path;
+
+            return path;
+        }
 
 
         public async Task<bool> SaveAll()

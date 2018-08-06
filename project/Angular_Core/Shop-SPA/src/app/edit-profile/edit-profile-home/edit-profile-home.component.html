@@ -1,18 +1,11 @@
 <div class="container">
   <div class="row">
-    <div class="col-4">
+    <div class="col-md-4">
       <h1 class="mt-4">Your Profile</h1>
-    </div>
-    <div class="col-8">
-      <div class="alert alert-info mt-4" *ngIf="editUserForm.dirty">
-        <strong>Information:</strong> You have made changes. any unsaved changes will be lost!
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-4">
       <div class="card">
-        <img [src]="user.picturePath" alt="{{user.username}}" class="card-img-top img-thumbnail">
+        <div class="img-wrapper">
+            <img alt="{{user.username}}" class="card-img-top img-thumbnail" [src]="imageToShow" *ngIf="isImageLoading; else noImageFound">
+        </div>
         <div class="card-body">
           <div>
             <strong>UserName:</strong>
@@ -30,8 +23,11 @@
         </div>
       </div>
     </div>
-    <div class="col-8">
-      <div class="tab-panel">
+    <div class="col-md-8">
+      <div class="alert alert-info mt-4" *ngIf="editUserForm.dirty">
+        <strong>Information:</strong> You have made changes. any unsaved changes will be lost!
+      </div>
+      <div class="tab-panel mt-4">
         <tabset class="user-tabset">
           <tab heading="Edit Profile">
 
@@ -61,7 +57,7 @@
           </tab>
 
           <tab heading="Edit Picture">
-            <app-user-image-edit></app-user-image-edit>
+            <app-user-image-edit (reloadImage)="getImageFromService()"></app-user-image-edit>
           </tab>
 
         </tabset>
@@ -69,3 +65,9 @@
     </div>
   </div>
 </div>
+
+<ng-template #noImageFound>
+  <div class="card-img-top img-thumbnail text-center no-img-found">
+      <i class="fas fa-exclamation-triangle my-5"></i>
+  </div>
+</ng-template>
