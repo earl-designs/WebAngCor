@@ -66,3 +66,4 @@ testem.log
 Thumbs.db
 
 /project/Angular_Core/startAll.bat
+project/Angular_Core/Shop-SPA/package-lock.json
