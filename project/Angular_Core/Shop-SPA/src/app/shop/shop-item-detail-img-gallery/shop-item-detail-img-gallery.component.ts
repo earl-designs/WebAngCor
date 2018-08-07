@@ -2,20 +2,25 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ShopItem } from '../../_models/shopItem';
 import { ImgService } from '../../_services/img.service';
 import { SlideImage } from '../../_models/slideImage';
+import { NgbCarouselConfig } from '../../../../node_modules/@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-shop-item-detail-img-gallery',
   templateUrl: './shop-item-detail-img-gallery.component.html',
-  styleUrls: ['./shop-item-detail-img-gallery.component.css']
+  styleUrls: ['./shop-item-detail-img-gallery.component.css'],
+  providers: [NgbCarouselConfig]
 })
 export class ShopItemDetailImgGalleryComponent implements OnInit {
   imgScale = false;
   exampleImages: SlideImage[];
-  myInterval = 0;
-  activeSlideIndex = 0;
   @Input() shopItem: ShopItem;
 
-  constructor(private imgService: ImgService) { }
+  constructor(private imgService: ImgService, private carouselConfig: NgbCarouselConfig) {
+    carouselConfig.interval = 0;
+    carouselConfig.wrap = false;
+    carouselConfig.keyboard = false;
+    carouselConfig.pauseOnHover = false;
+   }
 
   ngOnInit() {
     this.exampleImages = new Array();

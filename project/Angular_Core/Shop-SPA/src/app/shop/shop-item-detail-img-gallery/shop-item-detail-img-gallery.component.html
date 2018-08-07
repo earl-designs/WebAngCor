@@ -1,13 +1,14 @@
-<carousel [interval]="myInterval">
-  <slide *ngFor="let image of exampleImages">
+
+<ngb-carousel *ngIf="exampleImages">
+  <ng-template ngbSlide *ngFor="let image of exampleImages">
     <div (click)="toggleScale()" *ngIf="image?.image; else noImageFound">
-      <img class="card-img" [class.scale]="imgScale" alt="{{shopItem?.name}} slide" [src]="image.image" >
-      <div class="carousel-caption d-none d-md-block">
-        <h3>{{image.id}}</h3>
-      </div>
+        <img class="card-img" [class.scale]="imgScale"  [src]="image.image" alt="{{image.id}} slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>{{image.id}}</h3>
+        </div>
     </div>
-  </slide>
-</carousel>
+  </ng-template>
+</ngb-carousel>
 
 <ng-template #noImageFound>
   <div class="card-img-top text-center img-thumbnail no-img-found">
