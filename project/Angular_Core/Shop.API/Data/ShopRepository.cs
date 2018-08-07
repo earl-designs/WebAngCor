@@ -31,6 +31,12 @@ namespace Shop.API.Data
                                           .Include(p => p.ExampleImages)
                                           .ToListAsync();
 
+            foreach(var shopItem in shopItems){
+                shopItem.ExampleImages = await _context.ShopItemImage.OrderByDescending(o => o.Main)
+                                                                     .Where(w => w.ShopItemId == shopItem.Id)
+                                                                     .ToListAsync();
+            }
+
             return shopItems;
         }
 
@@ -38,10 +44,11 @@ namespace Shop.API.Data
         {
             var shopItems = await _context.ShopItem
                                           .Include(p => p.Categorys).ThenInclude(x => x.Category)
-                                          .Include(p => p.ExampleImages)
                                           .FirstOrDefaultAsync(u => u.Id == id);
-            // var exampleImages = await _context.ShopItemImage.OrderBy(o => o.Main == true).Where(w => w.ShopItemId == id).ToListAsync();
-            // shopItems.ExampleImages = exampleImages;
+            
+            shopItems.ExampleImages = await _context.ShopItemImage.OrderByDescending(o => o.Main)
+                                                                  .Where(w => w.ShopItemId == id)
+                                                                  .ToListAsync();
 
             return shopItems;
         }
