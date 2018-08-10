@@ -25,7 +25,6 @@ export class ShopItemDetailImgGalleryComponent implements OnInit {
   ngOnInit() {
     this.exampleImages = new Array();
     this.getImageFromService();
-    console.log(this.exampleImages);
   }
 
   toggleScale() {

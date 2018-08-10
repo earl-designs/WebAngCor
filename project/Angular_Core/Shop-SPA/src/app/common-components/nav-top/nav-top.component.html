@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top ">
   <div class="container">
-    <a class="navbar-brand" [routerLink]="['/home']">
-      <img src="assets/images/icon.png" width="30" height="30" alt="" class="rounded-circle">
+    <a class="navbar-brand favicon mr-2" [routerLink]="['/home']">
+      <img  class="rounded-circle favicon-img" src="assets/images/icon.png" alt="">
     </a>
     <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed">
       <span class="navbar-toggler-icon"></span>
@@ -13,7 +13,7 @@
 
         <!-- Shop Link -->
         <li class="nav-item"  routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/shop']">
+          <a class="nav-link rounded" [routerLink]="['/shop']">
             <i class="icon fas fa-shopping-basket"></i>
           </a>
         </li>
@@ -21,7 +21,7 @@
 
         <!-- Wishlist Link -->
         <li *ngIf="loggedIn()" class="nav-item"  routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/wishlist']">
+          <a class="nav-link rounded" [routerLink]="['/wishlist']">
             <i class="icon far fa-heart">
                 <span class="badge badge-pill badge-success">2</span>
             </i>
@@ -31,7 +31,7 @@
 
         <!-- Shopping Cart Link -->
         <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/shoppingCart']">
+          <a class="nav-link rounded" [routerLink]="['/shoppingCart']">
             <i class="icon fas fa-shopping-cart">
               <span class="badge badge-pill badge-warning">5</span>
             </i>
@@ -41,7 +41,7 @@
 
         <!-- Add new Link -->
         <li *ngIf="loggedIn()" class="nav-item" routerLinkActive="active">
-          <a class="nav-link" [routerLink]="['/addNew']">
+          <a class="nav-link rounded" [routerLink]="['/addNew']">
             <i class="icon fas fa-plus"></i>
           </a>
         </li>
@@ -56,8 +56,11 @@
 
       <!-- navbar Right -->
       <div *ngIf="loggedIn()" class="nav-item dropdown" dropdown >
-        <a class="dropdown-toggle nav-link" dropdownToggle >
-          Welcome {{authService.decodedToken?.unique_name | titlecase}}
+        <a class="dropdown-toggle nav-link nav-link-user rounded" dropdownToggle >
+            <span class="mr-1" *ngIf="isImageLoading; else noImageFound">
+              <img class="user-img rounded-circle" src="{{profilePicture}}" alt="your profile Picture">
+            </span>
+          {{authService.decodedToken?.unique_name | titlecase}}
         </a>
       
         <div class="dropdown-menu" *dropdownMenu >
@@ -76,3 +79,9 @@
     </div>
   </div>
 </nav>
+
+<ng-template #noImageFound>
+    <div class="no-img-found">
+        <i class="fas fa-exclamation-triangle"></i>
+    </div>
+</ng-template>

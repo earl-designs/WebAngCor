@@ -5,3 +5,20 @@
 .navbar .nav-link, .navbar .navbar-brand{
 	border: none;
 }
+
+.nav-link-user {
+    padding: 0;
+}
+
+.favicon {
+    padding: 0;
+}
+.favicon-img {
+    max-height: 40px;
+}
+
+.user-img {
+    max-height: 45px;
+    border: 1px solid Black;
+    display: inline;
+}

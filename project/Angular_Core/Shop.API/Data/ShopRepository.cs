@@ -32,8 +32,8 @@ namespace Shop.API.Data
                                           .ToListAsync();
 
             foreach(var shopItem in shopItems){
-                shopItem.ExampleImages = await _context.ShopItemImage.OrderByDescending(o => o.Main)
-                                                                     .Where(w => w.ShopItemId == shopItem.Id)
+                shopItem.ExampleImages = await _context.ShopItemImage.Where(w => w.ShopItemId == shopItem.Id)
+                                                                     .OrderByDescending(o => o.Main)
                                                                      .ToListAsync();
             }
 
@@ -46,8 +46,8 @@ namespace Shop.API.Data
                                           .Include(p => p.Categorys).ThenInclude(x => x.Category)
                                           .FirstOrDefaultAsync(u => u.Id == id);
             
-            shopItems.ExampleImages = await _context.ShopItemImage.OrderByDescending(o => o.Main)
-                                                                  .Where(w => w.ShopItemId == id)
+            shopItems.ExampleImages = await _context.ShopItemImage.Where(w => w.ShopItemId == id)
+                                                                  .OrderByDescending(o => o.Main)
                                                                   .ToListAsync();
 
             return shopItems;
