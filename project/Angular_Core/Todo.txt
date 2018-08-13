@@ -1,3 +1,15 @@
-- Refactor userImage names to "Image"
+- Login / Register frame
+
+- Add new ShopItem Site
+- Edit ShopItem Site
 
 - angular components organise folders
+
+- Default Image if not found ( GlyphIcon )
+
+- Refactor userImage names to "Image"
+
+- Paging
+- Filtering
+- Sorting
+
