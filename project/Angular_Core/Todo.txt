@@ -1,13 +1,14 @@
-- Login / Register frame
+- Login / Register frame    --> Reactive Form
 
-- Add new ShopItem Site
-- Edit ShopItem Site
+- Add new ShopItem Site     --> Reactive Form
+- Edit ShopItem Site        --> Reactive Form
 
-- angular components organise folders
+- organise angular components folders
 
 - Default Image if not found ( GlyphIcon )
+- look into Images loading problem      --> shown like " null -> not loaded -> found "
 
-- Refactor userImage names to "Image"
+- Refactor userImage names to "Image"   --> naming convention
 
 - Paging
 - Filtering
