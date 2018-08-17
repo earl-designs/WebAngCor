@@ -41,8 +41,6 @@
     CreateDate: '{{date(new Date(2017,0,1), new Date(2017, 7, 31), "YYYY-MM-dd")}}',
     
     PreName: function(){ return this.Username; },
-    LastName: function(){ return this.Username; },
-    
-    PicturePath: function(num) {return 'https://randomuser.me/api/portraits/men/' + num.integer(1,99) + '.jpg';}
+    LastName: function(){ return this.Username; }
   }
 ]

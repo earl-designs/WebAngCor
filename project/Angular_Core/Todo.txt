@@ -1,3 +1,33 @@
-- Refactor userImage names to "Image"
+- Login / Register frame    --> Reactive Form
+_______________________________________________________________________________________________________________
+- organise angular components folders
 
-- API ShipItem images sorting
+- Refactor userImage names to "Image"   --> naming convention
+
+- Update ShopItem Model --> "Image" Rating, DownloadPath ... 
+- Update User Model -->  "Image", more personal Information
+- Update Category Model --> DisplayName 
+
+- change BoughtItem / wishlist naming --> create naming convention
+_______________________________________________________________________________________________________________
+- Remove Value stuff
+
+- Seed add ShopItemCategory to ShopItem
+
+- Default Image if not found ( GlyphIcon )
+- look into Images loading problem      --> shown like " null -> not loaded -> found "
+_______________________________________________________________________________________________________________
+- implement wishlist / Boughtlist Display
+- implement Add to wishlist
+- implement Add to Boughtlist
+
+- Edit ShopItem Component --> Add to wishlist only if loggedIn
+
+- Add new ShopItem Site     --> Reactive Form
+- Edit ShopItem Site        --> Reactive Form
+_______________________________________________________________________________________________________________
+- Paging
+- Filtering
+- Sorting
+
+- Identity and Role

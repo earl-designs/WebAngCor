@@ -1,0 +1,17 @@
+
+<ngb-carousel *ngIf="exampleImages">
+  <ng-template ngbSlide *ngFor="let image of exampleImages">
+    <div (click)="toggleScale()" *ngIf="image?.image; else noImageFound">
+        <img class="card-img" [class.scale]="imgScale"  [src]="image.image" alt="{{image.id}} slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>{{image.id}}</h3>
+        </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
+
+<ng-template #noImageFound>
+  <div class="card-img-top text-center img-thumbnail no-img-found">
+    <i class="fas fa-exclamation-triangle my-5 py-4"></i>
+  </div>
+</ng-template>

@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 
-import { BsDropdownModule, TabsModule } from 'ngx-bootstrap';
+import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -33,12 +33,12 @@ import { BoughtlistComponent } from './boughtlist/boughtlist.component';
 import { UserService } from './_services/user.service';
 import { ShopItemService } from './_services/shopItem.service';
 import { ShopHomeComponent } from './shop/shop-home/shop-home.component';
-import { ShopItemCardComponent } from './shop/shop-item-card/shop-item-card.component';
+import { ShopItemCardComponent } from './shop-item/shop-item-card/shop-item-card.component';
 import { ShopCategoryComponent } from './shop/shop-category/shop-category.component';
-import { ShopItemDetailComponent } from './shop/shop-item-detail/shop-item-detail.component';
+import { ShopItemDetailComponent } from './shop-item/shop-item-detail/shop-item-detail.component';
 import { ShopItemsResolver } from './_resolvers/shop-items-resolver';
 import { CategorysResolver } from './_resolvers/categorys-resolver';
-import { ShopItemDetailImgGalleryComponent } from './shop/shop-item-detail-img-gallery/shop-item-detail-img-gallery.component';
+import { ShopItemDetailImgGalleryComponent } from './shop-item/shop-item-detail-img-gallery/shop-item-detail-img-gallery.component';
 import { EditProfileHomeComponent } from './edit-profile/edit-profile-home/edit-profile-home.component';
 import { UserEditResolver } from './_resolvers/user-edit-resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
@@ -75,6 +75,7 @@ export function tokenGetter() {
       FormsModule,
       TabsModule.forRoot(),
       BsDropdownModule.forRoot(),
+      BsDatepickerModule.forRoot(),
       CarouselModule.forRoot(),
       ModalModule.forRoot(),
       NgbModule.forRoot(),

@@ -10,7 +10,8 @@
 /* bootswatch styles */
 @import '../node_modules/bootswatch/dist/slate/bootstrap.min.css';
 
-
+/* ngx-bootstrap */
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
 
 body{
 	margin-top:55px;

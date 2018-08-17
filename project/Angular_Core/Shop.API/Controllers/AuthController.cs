@@ -3,6 +3,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -18,8 +19,10 @@ namespace Shop.API.Controllers
     {
         private readonly Data.IAuthRepository _repo;
         private readonly IConfiguration _config;
-        public AuthController(Data.IAuthRepository repo, IConfiguration config)
+        private readonly IMapper _mapper;
+        public AuthController(Data.IAuthRepository repo, IConfiguration config, IMapper mapper)
         {
+            _mapper = mapper;
             _config = config;
             _repo = repo;
         }
@@ -72,16 +75,18 @@ namespace Shop.API.Controllers
                 Expires = DateTime.Now.AddDays(1),
                 SigningCredentials = new SigningCredentials
                 (
-                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value)), 
+                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config.GetSection("AppSettings:Token").Value)),
                     SecurityAlgorithms.HmacSha512Signature
                 )
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
             var token = tokenHandler.CreateToken(tokenDescriptor);
+            var user =  _mapper.Map<UserDto>(userFromRepo);
 
-            return Ok(new {
-                token = tokenHandler.WriteToken(token)
+            return Ok(new
+            {
+                token = tokenHandler.WriteToken(token), user
             });
         }
 
