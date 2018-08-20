@@ -8,7 +8,7 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { BsDropdownModule, TabsModule, BsDatepickerModule } from 'ngx-bootstrap';
 import { CarouselModule } from 'ngx-bootstrap';
 import { ModalModule } from 'ngx-bootstrap';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FileUploadModule } from '../../node_modules/ng2-file-upload';
 
 

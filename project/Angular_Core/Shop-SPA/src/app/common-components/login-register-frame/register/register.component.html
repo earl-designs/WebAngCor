@@ -1,5 +1,5 @@
 <div class="card-body tab-pane">
-  <h2 class="card-title text-center">Sign In</h2>
+  <h2 class="card-title text-center">Register</h2>
 
   <form #registerForm="ngForm" (ngSubmit)="register()">
 
@@ -18,8 +18,7 @@
     </div>
 
     <div class="text-center">
-      <button class="btn btn-lg btn-danger" type="button" (click)="cancel()">Cancel</button>
-      <button class="btn btn-lg btn-success" type="submit" [(disabled)]="!registerForm.valid" >Create Account</button>
+      <button class="btn btn-lg btn-success btn-block" type="submit" [(disabled)]="!registerForm.valid" >Create Account</button>
     </div>
 
   </form>

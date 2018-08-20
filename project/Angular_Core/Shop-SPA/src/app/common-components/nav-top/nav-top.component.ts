@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { AuthService } from '../../_services/auth.service';
 import { ImgService } from '../../_services/img.service';
+import { LoginRegisterFrameComponent } from '../login-register-frame/login-register-frame.component';
+import { BsModalService, BsModalRef } from '../../../../node_modules/ngx-bootstrap';
 
 @Component({
   selector: 'app-nav-top',
@@ -8,17 +10,25 @@ import { ImgService } from '../../_services/img.service';
   styleUrls: ['./nav-top.component.css']
 })
 export class NavTopComponent implements OnInit {
-  model: any = {};
+  @ViewChild(LoginRegisterFrameComponent) child: LoginRegisterFrameComponent;
   profilePicture: any;
   isImageLoading: boolean;
   isNavbarCollapsed = true;
+  selectedTab: number;
 
-  constructor(public authService: AuthService, private imgService: ImgService) { }
+  constructor(public authService: AuthService,
+              private imgService: ImgService,
+              private modalService: BsModalService) { }
 
   ngOnInit() {
     if (this.authService.loggedIn) {
       this.getImageFromService();
     }
+  }
+
+  openModal(selection: number, template: any) {
+    this.selectedTab = selection;
+    this.modalService.show(template, { class: 'modal-lg'});
   }
 
   logout() {

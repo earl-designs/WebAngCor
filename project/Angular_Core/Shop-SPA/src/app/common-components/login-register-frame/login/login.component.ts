@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from '../../../_services/auth.service';
 import { AlertifyService } from '../../../_services/alertify.service';
 import { Router } from '@angular/router';

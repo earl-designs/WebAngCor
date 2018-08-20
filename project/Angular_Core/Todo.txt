@@ -1,4 +1,6 @@
 - Login / Register frame    --> Reactive Form
+
+- User image in Nav
 _______________________________________________________________________________________________________________
 - organise angular components folders
 
