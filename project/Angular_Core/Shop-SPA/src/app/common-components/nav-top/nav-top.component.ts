@@ -34,6 +34,9 @@ export class NavTopComponent implements OnInit {
 
   closeModal() {
     this.modalRef.hide();
+    if (this.authService.loggedIn) {
+      this.getImageFromService();
+    }
   }
 
   logout() {

@@ -1,4 +1,4 @@
-- User image in Nav
+- User image in Nav changed in userEdit (Lecture 116)
 _______________________________________________________________________________________________________________
 - organise angular components folders
 
