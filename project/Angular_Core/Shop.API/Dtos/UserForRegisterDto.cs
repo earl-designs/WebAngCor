@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Shop.API.Dtos
@@ -8,7 +9,17 @@ namespace Shop.API.Dtos
         public string Username { get; set; }
 
         [Required]
-        [StringLength(8, MinimumLength = 4, ErrorMessage = "Password must be between 4 and 8 characters")]
+        public string Email { get; set; }
+
+        [Required]
+        [MinLength(8, ErrorMessage = "Password must be at least 8 characters")]
         public string Password { get; set; }
+
+        public DateTime Created { get; set; }
+
+        public UserForRegisterDto()
+        {
+            Created = DateTime.Now;
+        }
     }
 }

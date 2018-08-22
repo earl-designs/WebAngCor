@@ -83,7 +83,7 @@
 
 <ng-template #modal>
   <div class="modal-body py-0 px-0">
-    <app-login-register-frame [selectedTab]="selectedTab"></app-login-register-frame>
+    <app-login-register-frame [selectedTab]="selectedTab" (closeFrame)='closeModal($event)'></app-login-register-frame>
   </div>
 </ng-template>
 

@@ -15,6 +15,7 @@ export class NavTopComponent implements OnInit {
   isImageLoading: boolean;
   isNavbarCollapsed = true;
   selectedTab: number;
+  modalRef: BsModalRef;
 
   constructor(public authService: AuthService,
               private imgService: ImgService,
@@ -28,7 +29,11 @@ export class NavTopComponent implements OnInit {
 
   openModal(selection: number, template: any) {
     this.selectedTab = selection;
-    this.modalService.show(template, { class: 'modal-lg'});
+    this.modalRef = this.modalService.show(template, { class: 'modal-lg'});
+  }
+
+  closeModal() {
+    this.modalRef.hide();
   }
 
   logout() {

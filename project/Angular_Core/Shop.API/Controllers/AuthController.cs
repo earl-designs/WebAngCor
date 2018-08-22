@@ -35,23 +35,16 @@ namespace Shop.API.Controllers
 
             if (await _repo.UserExists(userForRegisterDto.Username))
             {
-                ModelState.AddModelError("Username", "Username already exists");
+                return BadRequest("Username already exists");
             }
 
-            // validate request
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            var userToCreate = new User
-            {
-                Username = userForRegisterDto.Username
-            };
+            var userToCreate = _mapper.Map<User>(userForRegisterDto);
 
             var createUser = await _repo.Register(userToCreate, userForRegisterDto.Password);
 
-            return StatusCode(201);
+            var userToReturn = _mapper.Map<UserDto>(createUser);
+
+            return CreatedAtRoute("GetUser", new {controller = "User", id = createUser.Id}, userToReturn);
         }
 
         [AllowAnonymous]

@@ -40,7 +40,7 @@ namespace Shop.API.Controllers
             return Ok(usersToReturn);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet("{id}", Name = "GetUser")]
         public async Task<IActionResult> getUser(int id)
         {
             var user = await _repo.GetUser(id);
