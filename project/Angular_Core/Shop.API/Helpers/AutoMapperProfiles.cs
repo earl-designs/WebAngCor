@@ -19,6 +19,7 @@ namespace Shop.API.Helpers
                 });
                 
             CreateMap<UserForUpdateDto, User>();
+            CreateMap<UserForRegisterDto, User>();
                 
             CreateMap<ShopItem, ShopItemDto>()
                 .ForMember(dest => dest.ExampleImagesId, opt => {

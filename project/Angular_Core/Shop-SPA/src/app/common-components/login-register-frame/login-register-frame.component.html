@@ -1,10 +1,10 @@
-<div class="card my-5">
-  <tabset>
+<div class="card">
+  <tabset #staticTabs>
     <tab heading="Login">
-        <app-login></app-login>
+        <app-login (loggedin)='closeFrameMethode($event)'></app-login>
     </tab>
     <tab heading="Register">
-        <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+        <app-register (registered)='closeFrameMethode($event)'></app-register>
     </tab>
   </tabset>
 </div>
