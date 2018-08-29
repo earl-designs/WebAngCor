@@ -1,9 +1,11 @@
-- Login / Register frame    --> Reactive Form
+- User Image in Nav changed in userEdit (Lecture 116)
+- UserEdit  --> Reactive Form
+- Login     --> with Email
 _______________________________________________________________________________________________________________
 - organise angular components folders
 
 - Refactor userImage names to "Image"   --> naming convention
-
+ 
 - Update ShopItem Model --> "Image" Rating, DownloadPath ... 
 - Update User Model -->  "Image", more personal Information
 - Update Category Model --> DisplayName 
@@ -11,7 +13,6 @@ ________________________________________________________________________________
 - change BoughtItem / wishlist naming --> create naming convention
 _______________________________________________________________________________________________________________
 - Remove Value stuff
-
 - Seed add ShopItemCategory to ShopItem
 
 - Default Image if not found ( GlyphIcon )

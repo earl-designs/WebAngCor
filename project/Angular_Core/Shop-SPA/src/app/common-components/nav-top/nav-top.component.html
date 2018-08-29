@@ -50,8 +50,9 @@
       </ul>
       <!-- navbar Left End -->
 
-      <div *ngIf="!loggedIn()" class="navbar-nav justify-content-end">
-        <button class="btn btn-outline-success">Login</button>
+      <div *ngIf="!loggedIn()" class="navbar-nav justify-content-end row">
+          <button class="btn btn-outline-success mx-1 my-1" (click)="openModal(0, modal)">Login</button>
+          <button class="btn btn-outline-info mx-1 my-1" (click)="openModal(1, modal)">Register</button>
       </div>
 
       <!-- navbar Right -->
@@ -79,6 +80,14 @@
     </div>
   </div>
 </nav>
+
+<ng-template #modal>
+  <div class="modal-body py-0 px-0">
+    <app-login-register-frame [selectedTab]="selectedTab" (closeFrame)='closeModal($event)'></app-login-register-frame>
+  </div>
+</ng-template>
+
+
 
 <ng-template #noImageFound>
     <div class="no-img-found">
